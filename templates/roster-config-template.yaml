@@ -1,0 +1,13 @@
+# Roster Configuration — [business-id] / [roster-id]
+# Copied by new-instance.sh; populated at roster activation.
+business_id: ""
+roster_id: ""                # e.g. roster-seo
+roster_version: ""           # version of the roster definition in use
+engagement_profile: ""       # full | lite  (see engagement-lifecycle pre-flight)
+activated_date: ""
+ecl_version_at_activation: ""
+orchestrator_id: ""
+active_agents: []            # ids activated for THIS engagement (lite may exclude some)
+excluded_agents: []          # ids excluded by pre-flight, with reason
+tool_credentials_ref: ".env" # never store values here
+notes: ""

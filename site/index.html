@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mimir — Organisational Intelligence Engine</title>
+  <meta name="description" content="A governance-first framework for running specialist AI teams under one manifesto, with mandatory human approval gates. Honest about what it is: a strong methodology with an engine still being wired. Independently audited 58/100 — Prototype Only." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="dot"></span> Mimir</a>
+    <nav class="links">
+      <a href="#what">What it is</a>
+      <a href="#get">What you get</a>
+      <a href="#use">How to use it</a>
+      <a href="#achieves">What it achieves</a>
+      <a href="#byok">BYOK</a>
+      <a class="cta" href="what-its-not.html">What it's NOT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <span class="badge">Honest status: independently audited 58/100 — "Prototype Only"</span>
+    <h1>Mimir — the Organisational Intelligence Engine.</h1>
+    <p class="lede">
+      A governance-first way to run AI delivery teams: interview a business, agree a manifesto, then let specialist AI teams do the work &mdash; with a human approving every big decision and the whole system versioning and auditing itself. Like its namesake, Mimir counsels; you decide. This page tells you plainly what it is, and what it isn't yet.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#what">See how it works</a>
+      <a class="btn ghost" href="what-its-not.html">Read what it's NOT &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WHAT IT IS ============ -->
+<section id="what">
+  <div class="wrap">
+    <p class="eyebrow">What it is</p>
+    <h2>One manifesto. Specialist AI teams. A human in charge.</h2>
+    <p class="lead">
+      In one sentence: <strong>Mimir captures a business's strategy once as a
+      "manifesto" (an Executive Command Layer), then cascades it down to reusable rosters of
+      specialist AI agents that deliver the work under mandatory human sign-off &mdash; and it
+      versions and audits every step.</strong>
+    </p>
+
+    <div class="grid two mt24">
+      <div class="card">
+        <h3>The model in plain English</h3>
+        <ol class="clean" style="padding-left:18px;color:var(--text-soft)">
+          <li><strong>Interview</strong> the business to understand it.</li>
+          <li><strong>Agree a manifesto</strong> &mdash; the North Star plus the goals that everything must serve.</li>
+          <li><strong>Specialist AI teams (rosters)</strong> do the actual work &mdash; SEO, app development, content.</li>
+          <li><strong>A human approves</strong> the big decisions at fixed gates. Nothing important ships without sign-off.</li>
+          <li><strong>It learns and versions itself</strong> &mdash; every change is recorded, nothing changes silently.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Why "governance-first"</h3>
+        <p>
+          Most agent projects start with autonomy and bolt on control later. This one starts
+          with control: a single source of truth, semantic versioning at every layer, a
+          machine-readable registry checked in CI, and human approval gates that are mandatory
+          by design. The independent audit called the governance and validation layers
+          &ldquo;production-ready-grade&rdquo; &mdash; better than most shipped systems. The
+          execution engine underneath is the part still being built.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt24">
+      <h3 style="margin-bottom:14px">The stack, top to bottom</h3>
+      <div class="diagram-wrap card" style="padding:24px">
+        <svg class="diagram" viewBox="0 0 820 430" role="img" aria-label="Diagram: the Constitutional layer cascades objectives to rosters, which contain specialist agents. A human sits above, approving gates.">
+          <defs>
+            <style>
+              .box{fill:var(--bg-soft);stroke:var(--border);stroke-width:1.5;}
+              .lbl{fill:var(--text);font-family:var(--font);font-weight:700;}
+              .sub{fill:var(--text-soft);font-family:var(--font);}
+              .accentbox{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5;}
+              .arrow{stroke:var(--text-faint);stroke-width:1.6;fill:none;}
+              .aname{fill:var(--accent);font-family:var(--font);font-weight:700;}
+            </style>
+            <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+              <path d="M0,0 L9,4.5 L0,9 z" fill="var(--text-faint)"></path>
+            </marker>
+          </defs>
+
+          <!-- Human -->
+          <rect class="accentbox" x="560" y="18" width="240" height="66" rx="10"></rect>
+          <text class="aname" x="580" y="46" font-size="15">Human owner</text>
+          <text class="sub" x="580" y="66" font-size="12.5">approves gates &middot; sole sign-off authority</text>
+          <path class="arrow" d="M560,52 L470,52" marker-end="url(#ah)"></path>
+
+          <!-- Constitutional layer -->
+          <rect class="box" x="20" y="18" width="440" height="120" rx="12"></rect>
+          <text class="lbl" x="40" y="46" font-size="16">Constitutional layer</text>
+          <text class="sub" x="40" y="70" font-size="13">Executive Command Layer (the manifesto):</text>
+          <text class="sub" x="40" y="90" font-size="13">North Star &middot; goals &middot; operating model &middot; exclusion zones</text>
+          <text class="sub" x="40" y="114" font-size="13">Governed by the AI Operating Model + ECL Orchestrator</text>
+
+          <!-- cascade arrows -->
+          <path class="arrow" d="M120,138 L120,190" marker-end="url(#ah)"></path>
+          <path class="arrow" d="M300,138 L300,190" marker-end="url(#ah)"></path>
+          <path class="arrow" d="M480,138 L480,190" marker-end="url(#ah)"></path>
+          <text class="sub" x="330" y="168" font-size="12">cascades objectives &darr;</text>
+
+          <!-- Rosters -->
+          <rect class="box" x="20" y="195" width="200" height="150" rx="10"></rect>
+          <text class="lbl" x="38" y="222" font-size="14">Roster: SEO</text>
+          <text class="sub" x="38" y="242" font-size="12">Orchestrator</text>
+          <rect class="accentbox" x="38" y="255" width="70" height="26" rx="6"></rect>
+          <text class="aname" x="50" y="272" font-size="11">SEO</text>
+          <rect class="accentbox" x="116" y="255" width="70" height="26" rx="6"></rect>
+          <text class="aname" x="128" y="272" font-size="11">AEO</text>
+          <rect class="accentbox" x="38" y="290" width="70" height="26" rx="6"></rect>
+          <text class="aname" x="50" y="307" font-size="11">GEO</text>
+          <text class="sub" x="38" y="335" font-size="11">12 agents</text>
+
+          <rect class="box" x="235" y="195" width="200" height="150" rx="10"></rect>
+          <text class="lbl" x="253" y="222" font-size="14">Roster: App Dev</text>
+          <text class="sub" x="253" y="242" font-size="12">Lead Dev Orchestrator</text>
+          <rect class="accentbox" x="253" y="255" width="80" height="26" rx="6"></rect>
+          <text class="aname" x="263" y="272" font-size="11">Plan/Design</text>
+          <rect class="accentbox" x="341" y="255" width="70" height="26" rx="6"></rect>
+          <text class="aname" x="351" y="272" font-size="11">Eng</text>
+          <rect class="accentbox" x="253" y="290" width="120" height="26" rx="6"></rect>
+          <text class="aname" x="263" y="307" font-size="11">QA / Sec / Insight</text>
+          <text class="sub" x="253" y="335" font-size="11">13 agents</text>
+
+          <rect class="box" x="450" y="195" width="200" height="150" rx="10"></rect>
+          <text class="lbl" x="468" y="222" font-size="14">Roster: Content</text>
+          <text class="sub" x="468" y="242" font-size="12">Orchestrator</text>
+          <rect class="accentbox" x="468" y="255" width="150" height="26" rx="6"></rect>
+          <text class="aname" x="478" y="272" font-size="11">Writer &middot; Brand steward</text>
+          <text class="sub" x="468" y="335" font-size="11">3 agents</text>
+
+          <!-- next roster -->
+          <rect class="box" x="665" y="195" width="135" height="150" rx="10" stroke-dasharray="5 4"></rect>
+          <text class="lbl" x="683" y="222" font-size="14">Roster: next</text>
+          <text class="sub" x="683" y="246" font-size="12">e.g. Paid Media,</text>
+          <text class="sub" x="683" y="264" font-size="12">Email, Operations</text>
+          <text class="sub" x="683" y="290" font-size="12">(reusable slot)</text>
+
+          <!-- footer note -->
+          <text class="sub" x="20" y="378" font-size="12.5">Rosters never hand off to each other directly &mdash; every cross-roster route goes back up through the orchestrator,</text>
+          <text class="sub" x="20" y="398" font-size="12.5">which checks it against the manifesto first. 4 management agents (interviewer, orchestrator, AI manager, account manager) sit at the top.</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU GET ============ -->
+<section id="get">
+  <div class="wrap">
+    <p class="eyebrow">What you get</p>
+    <h2>The actual inventory &mdash; what's in the repo today</h2>
+    <p class="lead">Real numbers, not aspirations. Everything below exists as versioned files in the repository, validated in CI.</p>
+
+    <div class="stat-row mt24">
+      <div class="stat"><div class="n">35</div><div class="l">registered agents across 4 rosters + management</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">constitutional documents</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">reusable specialist rosters</div></div>
+      <div class="stat"><div class="n">44/44</div><div class="l">runtime tests passing</div></div>
+    </div>
+
+    <div class="inv mt24">
+      <div class="inv-row"><div class="k">Constitutional docs</div><div class="v">Executive Command Layer (ECL) framework, AI Operating Model (AOM), framework architecture, engagement lifecycle, and the context &amp; memory protocol &mdash; the rules every agent obeys.</div></div>
+      <div class="inv-row"><div class="k">SEO roster</div><div class="v">12 agents covering SEO, AEO (answer-optimised) and GEO (generative/local) disciplines, plus performance reporting.</div></div>
+      <div class="inv-row"><div class="k">App Dev roster</div><div class="v">13 agents &mdash; PM, business analyst, solution &amp; system architecture, devops/CI, database, backend, frontend, security, QA, UX/UI, insight. Default stack Vercel / Neon / Clerk / Resend.</div></div>
+      <div class="inv-row"><div class="k">Content roster</div><div class="v">3 agents including a brand steward.</div></div>
+      <div class="inv-row"><div class="k">Management agents</div><div class="v">ECL Interview (business intake), ECL Orchestrator (apex &mdash; cascades &amp; arbitrates), AI Manager (governance crank), Client Account Manager (comms &amp; approval chasing).</div></div>
+      <div class="inv-row"><div class="k">Validator + CI</div><div class="v">A Python validator enforcing AOM compliance and drift checks on every push, wired into GitHub Actions. Agent and manifest must change in the same commit or CI fails.</div></div>
+      <div class="inv-row"><div class="k">Runtime kernel</div><div class="v">A minimum deterministic engine at <code>runtime/</code>: heartbeat + dead-agent detection, checkpoint/resume, a gate-runner, budget pause/resume, workspace isolation, structured state emission, BYOK credentials, tool-resilience, and genesis decision plumbing. 44/44 tests pass. <em>Live subagent execution is still a documented stub.</em></div></div>
+      <div class="inv-row"><div class="k">Independent auditor</div><div class="v">The Agentic System Auditor (ASA) &mdash; a fresh, adversarial auditor that scores the whole system and is deliberately kept outside the registry. Its verdict is on this site, unedited.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO USE ============ -->
+<section id="use">
+  <div class="wrap">
+    <p class="eyebrow">How to use it</p>
+    <h2>From your business to delivered work, gate by gate</h2>
+
+    <div class="callout key mt8">
+      <h3>Step&nbsp;0 &mdash; Bring your own API key (BYOK)</h3>
+      <p>
+        This is not optional and it comes first. The repository ships with <strong>no
+        credentials</strong>. You supply your own Anthropic/Claude key to run the agents, and
+        your own service keys (Vercel, Neon, Clerk, and so on) per engagement. They stay on your
+        device and are never committed. <a href="#byok">More on BYOK &amp; security &darr;</a>
+      </p>
+    </div>
+
+    <ol class="steps mt24">
+      <li><strong>Run the interview</strong><span>The ECL Interview agent conducts a structured business intake and produces a draft manifesto, with an honest gap report of what it doesn't yet know.</span></li>
+      <li><strong>Sign off the manifesto</strong><span>You review, amend, and sign. Work is blocked until you do &mdash; in the pilot the owner's edits materially changed the product. The manifesto becomes the single source of truth, versioned v1.0.0.</span></li>
+      <li><strong>Pick your tier (T0&ndash;T2)</strong><span>The framework is SME-scoped: micro, small, and mid-SME tiers set how deep the manifesto goes, which rosters activate, and how many approvers are needed. (Enterprise/global tiers are documented but deliberately not built.)</span></li>
+      <li><strong>Activate a roster</strong><span>Sign the pre-flight record and a roster goes live. It runs work in waves, each with a Goal &rarr; Plan &rarr; Act &rarr; Review &rarr; Learn cycle and quality gates.</span></li>
+      <li><strong>Approve the gates as work proceeds</strong><span>At each mandatory gate &mdash; pre-flight, release, version bumps &mdash; the decision is yours. Nothing important ships without a human signature.</span></li>
+    </ol>
+
+    <div class="callout warn mt24">
+      <h3>Honest note on execution today</h3>
+      <p>
+        The kernel logic is real and tested, but <strong>live agent execution is still
+        human-supervised</strong>. In the pilot a person dispatched every wave by hand; the piece
+        that spawns and runs real subagents unattended is a documented stub, not yet proven. Treat
+        this as a supervised methodology you drive, not an autopilot you switch on.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT ACHIEVES ============ -->
+<section id="achieves">
+  <div class="wrap">
+    <p class="eyebrow">What it achieves</p>
+    <h2>What it actually delivered under test</h2>
+    <p class="lead">
+      A real business (Riverside Bookings) was taken through the full lifecycle in a live pilot.
+      Result: <strong>6 PASS / 2 PARTIAL / 0 FAIL</strong> against pre-declared success criteria.
+      These are the concrete outcomes &mdash; each traceable to a logged event.
+    </p>
+
+    <div class="grid two mt24">
+      <div class="card">
+        <h3>Repeatable, auditable delivery</h3>
+        <p>Every decision, gate, and defect is logged and reconstructable. Semantic versioning at every layer; no silent changes. The audit trail let an independent auditor replay the entire run.</p>
+      </div>
+      <div class="card">
+        <h3>A manifesto as single source of truth</h3>
+        <p>One document holds the North Star and goals. Cross-roster work is routed through it and checked against it &mdash; agents can't quietly drift from what the business agreed.</p>
+      </div>
+      <div class="card">
+        <h3>Non-fabrication discipline</h3>
+        <p>A blocking rule against inventing data held at every test point: the AI refused to present invented figures <strong>3 times</strong>, and a deliberately seeded bug was caught independently by <strong>two</strong> different reviewers (QA and UX).</p>
+      </div>
+      <div class="card">
+        <h3>Self-improvement via LEARN</h3>
+        <p>Each wave ends by harvesting learnings into version-bump proposals, so the agent <em>definitions</em> improve over time. The pilot surfaced ~28 of its own process defects &mdash; arguably its most valuable output.</p>
+      </div>
+    </div>
+
+    <div class="callout good mt24">
+      <h3>A real, tested app came out of it</h3>
+      <p>
+        The App Dev roster produced a genuine, building application: 105/105 backend tests,
+        139/139 frontend, 40/40 database, 53/53 end-to-end, pipeline green, WCAG 2.2 AA met,
+        0 critical security findings. It was accepted as a <strong>verified reference
+        deliverable</strong> &mdash; not production (every external service was a test double).
+        See <a href="what-its-not.html">what it's NOT</a> for exactly why that distinction matters.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BYOK / SECURITY ============ -->
+<section id="byok">
+  <div class="wrap">
+    <p class="eyebrow">BYOK &amp; security</p>
+    <h2>You bring your own keys. They stay yours.</h2>
+    <p class="lead">This framework is meant to be shared publicly, so it is built on a strict bring-your-own-key model &mdash; the same approach as most open-source AI tools.</p>
+    <div class="grid two mt24">
+      <ul class="clean">
+        <li>The repository ships with <strong>no API keys, ever</strong>. Only placeholder names in an <code>.env.example</code> are tracked.</li>
+        <li>You enter your <strong>own</strong> Anthropic key (to run agents) and your own service keys per engagement.</li>
+        <li>Keys are stored <strong>client-side / locally only</strong> &mdash; never committed, never transmitted to any server the project owner controls.</li>
+      </ul>
+      <ul class="clean">
+        <li>Keys are <strong>redacted everywhere</strong> &mdash; not in logs, emitted state, error messages, or the UI beyond the last 4 characters.</li>
+        <li>A CI secret-scan gate stays on and blocks any accidental key commit.</li>
+        <li>If a key is missing the app <strong>fails loud and stops</strong> &mdash; it never falls back to a default or anyone else's key.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div style="max-width:34ch">
+        <a class="brand" href="index.html"><span class="dot"></span> Mimir</a>
+        <p class="muted mt8" style="font-size:14px">A governance-first framework for running specialist AI teams under one manifesto, with mandatory human sign-off. Honest about its stage: a strong methodology with an engine still being wired.</p>
+      </div>
+      <div>
+        <h4>Read next</h4>
+        <ul>
+          <li><a href="what-its-not.html">What it's NOT &rarr;</a></li>
+          <li><a href="#what">How it works</a></li>
+          <li><a href="#achieves">Pilot results</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/rjperry36/mimir">GitHub repository</a></li>
+          <li><a href="what-its-not.html#audit">The ASA verdict (58/100)</a></li>
+          <li><a href="what-its-not.html#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      Next on the roadmap: wire the runtime executor and a tool-resilience layer (so agents survive real API timeouts), then productise into the single-operator Mimir Console. Enterprise/global multi-entity support is explicitly out of scope. &nbsp;&middot;&nbsp; Independently audited 58/100 &mdash; &ldquo;Prototype Only&rdquo;. This site states the framework's stage honestly by design.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

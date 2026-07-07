@@ -1,0 +1,92 @@
+# SAMPLE fixture — mirrors runtime/state.py StateEmitter.write_wave_status (schema wave-status/v1)
+# Not real runtime output; hand-built to exercise every WaveState the Console renders.
+# Fictional demo business — any resemblance to a real company is coincidental.
+engagement: riverside-bookings
+schema: wave-status/v1
+updated: "2026-07-06T09:12:00Z"
+waves:
+  w1-plan:
+    state: COMPLETE
+    agent: delivery_project_manager_agent
+    agent_version: v1.0.3
+    termination_cause: COMPLETED
+    started: "2026-07-03T08:00:00Z"
+    finished: "2026-07-03T08:41:00Z"
+    workspace: workspaces/riverside-bookings--w1-plan
+    port: null
+  w2-analysis:
+    state: COMPLETE
+    agent: analysis_business_analyst_agent
+    agent_version: v1.0.3
+    termination_cause: COMPLETED
+    started: "2026-07-03T09:00:00Z"
+    finished: "2026-07-03T10:12:00Z"
+    workspace: workspaces/riverside-bookings--w2-analysis
+    port: null
+  w3-design:
+    state: COMPLETE
+    agent: architecture_solution_design_agent
+    agent_version: v1.0.1
+    termination_cause: COMPLETED
+    started: "2026-07-03T11:00:00Z"
+    finished: "2026-07-04T14:30:00Z"
+    workspace: workspaces/riverside-bookings--w3-design
+    port: null
+  w4-frontend:
+    state: RUNNING
+    agent: engineering_frontend_agent
+    agent_version: v1.0.2
+    termination_cause: null
+    started: "2026-07-06T08:30:00Z"
+    finished: null
+    workspace: workspaces/riverside-bookings--w4-frontend
+    port: 3001
+  w5-backend:
+    state: DEAD
+    agent: engineering_backend_agent
+    agent_version: v1.0.0
+    termination_cause: DIED
+    detail: "no heartbeat for 4.2s (grace 3.0s) — silent death detected by kernel liveness monitor"
+    started: "2026-07-06T08:35:00Z"
+    finished: "2026-07-06T08:52:00Z"
+    workspace: workspaces/riverside-bookings--w5-backend
+    port: 3002
+  w6-security:
+    state: GATE_BLOCKED
+    agent: security_infosec_manager_agent
+    agent_version: v1.0.1
+    termination_cause: GATE_BLOCKED
+    detail: "security-gate FAILED: CI secret-scan gate not wired; 2 HIGH findings unresolved"
+    started: "2026-07-06T08:40:00Z"
+    finished: "2026-07-06T09:05:00Z"
+    workspace: workspaces/riverside-bookings--w6-security
+    port: null
+  w7-qa:
+    state: AWAITING_APPROVAL
+    agent: quality_qa_engineer_agent
+    agent_version: v1.0.2
+    termination_cause: null
+    detail: "QA sign-off pending human gate (see decisions-queue DQ-002)"
+    started: "2026-07-06T09:00:00Z"
+    finished: null
+    workspace: workspaces/riverside-bookings--w7-qa
+    port: null
+  w8-release:
+    state: BLOCKED
+    agent: devops_repo_cicd_agent
+    agent_version: v1.0.0
+    termination_cause: "BLOCKED_BY:w6-security:GATE_BLOCKED"
+    blocked_by: w6-security
+    started: null
+    finished: null
+    workspace: null
+    port: null
+  w9-reporting:
+    state: PENDING
+    agent: insight_performance_analyst_agent
+    agent_version: v1.0.1
+    termination_cause: null
+    started: null
+    finished: null
+    workspace: null
+    port: null

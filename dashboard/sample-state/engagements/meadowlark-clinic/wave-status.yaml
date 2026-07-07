@@ -1,0 +1,32 @@
+# SAMPLE fixture — a healthy engagement (all-green) so RAG roll-up has contrast
+engagement: meadowlark-clinic
+schema: wave-status/v1
+updated: "2026-06-09T18:00:00Z"
+waves:
+  w1-plan:
+    state: COMPLETE
+    agent: delivery_project_manager_agent
+    agent_version: v1.0.2
+    termination_cause: COMPLETED
+    started: "2026-06-09T09:00:00Z"
+    finished: "2026-06-09T09:46:00Z"
+    workspace: workspaces/dorchester--w1-plan
+    port: null
+  w2-analysis:
+    state: COMPLETE
+    agent: analysis_business_analyst_agent
+    agent_version: v1.0.2
+    termination_cause: COMPLETED
+    started: "2026-06-09T10:00:00Z"
+    finished: "2026-06-09T11:30:00Z"
+    workspace: workspaces/dorchester--w2-analysis
+    port: null
+  w3-delivery:
+    state: RUNNING
+    agent: engineering_frontend_agent
+    agent_version: v1.0.2
+    termination_cause: null
+    started: "2026-06-09T13:00:00Z"
+    finished: null
+    workspace: workspaces/dorchester--w3-delivery
+    port: 3010

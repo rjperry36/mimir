@@ -1,0 +1,245 @@
+# ============================================================
+# Framework Roster Manifest — authoritative agent registry
+# ============================================================
+# Regenerated from disk (privacy-scrub reconcile). CI-validated.
+# ============================================================
+
+manifest_updated: "2026-07-07"
+aom_version: "1.2.1"
+
+constitutional_agents:
+  - id: ai_manager_agent
+    version: "1.0.0"
+    file: agents/agent-ai-manager-v1.0.0.yaml
+    role: "AI Ecosystem Governance Manager"
+    lifecycle_status: active
+    definition_depth: full
+  - id: client_account_manager_agent
+    version: "1.0.0"
+    file: agents/agent-client-account-manager-v1.0.0.yaml
+    role: "Client Account Manager"
+    lifecycle_status: active
+    definition_depth: lean
+  - id: ecl_interview_agent
+    version: "2.1.0"
+    file: agents/agent-ecl-interview-v2.1.0.yaml
+    role: "Executive Command Layer — Business Intake Specialist"
+    lifecycle_status: active
+    definition_depth: full
+  - id: ecl_orchestrator_agent
+    version: "1.1.0"
+    file: agents/agent-ecl-orchestrator-v1.1.0.yaml
+    role: "Executive Command Orchestrator"
+    lifecycle_status: active
+    definition_depth: full
+
+rosters:
+  - roster_id: roster-seo
+    name: "Search Engine Optimisation"
+    version: "1.2.3"
+    document: rosters/seo/roster-seo-v1.2.3.md
+    agents:
+      - id: roster_seo_orchestrator_agent
+        version: "1.0.2"
+        file: rosters/seo/agents/agent-00-roster-seo-orchestrator-v1.0.2.yaml
+        role: "Search Strategy Orchestrator"
+        lifecycle_status: active
+        definition_depth: full
+      - id: seo_search_architecture_agent
+        version: "1.0.4"
+        file: rosters/seo/agents/agent-01-seo-architecture-v1.0.4.yaml
+        role: "Domain & Structure Specialist"
+        lifecycle_status: active
+        definition_depth: full
+      - id: seo_content_agent
+        version: "1.0.4"
+        file: rosters/seo/agents/agent-02-seo-content-v1.0.4.yaml
+        role: "Regional Content Specialist"
+        lifecycle_status: active
+        definition_depth: full
+      - id: seo_technical_agent
+        version: "1.0.4"
+        file: rosters/seo/agents/agent-03-seo-technical-v1.0.4.yaml
+        role: "Technical SEO Auditor"
+        lifecycle_status: active
+        definition_depth: full
+      - id: seo_local_citations_agent
+        version: "1.0.2"
+        file: rosters/seo/agents/agent-04-seo-local-citations-v1.0.2.yaml
+        role: "NAP & Directory Specialist"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: seo_link_authority_agent
+        version: "1.0.1"
+        file: rosters/seo/agents/agent-05-seo-link-authority-v1.0.1.yaml
+        role: "Link & Authority Builder"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: aeo_content_structure_agent
+        version: "1.0.4"
+        file: rosters/seo/agents/agent-06-aeo-content-v1.0.4.yaml
+        role: "Answer-Optimised Content Specialist"
+        lifecycle_status: active
+        definition_depth: full
+      - id: aeo_schema_entity_agent
+        version: "1.0.3"
+        file: rosters/seo/agents/agent-07-aeo-schema-entity-v1.0.3.yaml
+        role: "Schema & Entity Markup Specialist"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: geo_knowledge_graph_agent
+        version: "1.0.2"
+        file: rosters/seo/agents/agent-08-geo-knowledge-graph-v1.0.2.yaml
+        role: "Knowledge Graph & Entity Specialist"
+        lifecycle_status: active
+        definition_depth: full
+      - id: geo_local_presence_agent
+        version: "1.0.1"
+        file: rosters/seo/agents/agent-09-geo-local-presence-v1.0.1.yaml
+        role: "Local Discovery & AI Surface Specialist"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: gbp_management_agent
+        version: "1.0.4"
+        file: rosters/seo/agents/agent-10-gbp-management-v1.0.4.yaml
+        role: "Google Business Profile Specialist"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: performance_reporting_agent
+        version: "1.0.2"
+        file: rosters/seo/agents/agent-11-performance-reporting-v1.0.2.yaml
+        role: "Search Performance Analyst"
+        lifecycle_status: active
+        definition_depth: full
+  - roster_id: roster-appdev
+    name: "Application Development"
+    version: "1.0.5"
+    document: rosters/appdev/roster-appdev-v1.0.5.md
+    agents:
+      - id: roster_appdev_orchestrator_agent
+        version: "1.0.1"
+        file: rosters/appdev/agents/agent-00-appdev-orchestrator-v1.0.1.yaml
+        role: "Lead Developer & Delivery Orchestrator"
+        lifecycle_status: active
+        definition_depth: full
+      - id: delivery_project_manager_agent
+        version: "1.0.0"
+        file: rosters/appdev/agents/agent-01-project-manager-v1.0.0.yaml
+        role: "Project Manager"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: analysis_business_analyst_agent
+        version: "1.0.0"
+        file: rosters/appdev/agents/agent-02-business-analyst-v1.0.0.yaml
+        role: "Business Analyst"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: design_business_solution_agent
+        version: "1.0.1"
+        file: rosters/appdev/agents/agent-03-business-solution-design-v1.0.1.yaml
+        role: "Business Solution Designer"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: architecture_solution_design_agent
+        version: "1.0.2"
+        file: rosters/appdev/agents/agent-04-solution-architecture-v1.0.2.yaml
+        role: "Solution Architecture Designer"
+        lifecycle_status: active
+        definition_depth: full
+      - id: devops_repo_cicd_agent
+        version: "1.1.0"
+        file: rosters/appdev/agents/agent-05-repo-cicd-v1.1.0.yaml
+        role: "GitHub Repo & CI/CD Manager"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: engineering_database_agent
+        version: "1.1.0"
+        file: rosters/appdev/agents/agent-06-database-engineer-v1.1.0.yaml
+        role: "Database Engineer"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: engineering_backend_agent
+        version: "1.1.1"
+        file: rosters/appdev/agents/agent-07-backend-developer-v1.1.1.yaml
+        role: "Back-end Developer"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: engineering_frontend_agent
+        version: "1.0.1"
+        file: rosters/appdev/agents/agent-08-frontend-developer-v1.0.1.yaml
+        role: "Front-end Developer"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: security_infosec_manager_agent
+        version: "1.0.0"
+        file: rosters/appdev/agents/agent-09-security-infosec-v1.0.0.yaml
+        role: "Security & Infosec Manager"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: qa_functional_testing_agent
+        version: "1.0.0"
+        file: rosters/appdev/agents/agent-10-qa-testing-v1.0.0.yaml
+        role: "QA Tester"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: qa_uxui_testing_agent
+        version: "1.0.0"
+        file: rosters/appdev/agents/agent-11-uxui-testing-v1.0.0.yaml
+        role: "UX/UI Tester"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: insight_business_analytics_agent
+        version: "1.0.1"
+        file: rosters/appdev/agents/agent-12-business-insight-v1.0.1.yaml
+        role: "Business Insight"
+        lifecycle_status: active
+        definition_depth: lean
+  - roster_id: roster-content
+    name: "Content & Copywriting"
+    version: "1.1.0"
+    document: rosters/content/roster-content-v1.1.0.md
+    agents:
+      - id: roster_content_orchestrator_agent
+        version: "1.0.0"
+        file: rosters/content/agents/agent-00-roster-content-orchestrator-v1.0.0.yaml
+        role: "Content Strategy Orchestrator"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: content_copywriter_agent
+        version: "1.0.0"
+        file: rosters/content/agents/agent-01-content-copywriter-v1.0.0.yaml
+        role: "Copywriter"
+        lifecycle_status: active
+        definition_depth: lean
+      - id: content_brand_steward_agent
+        version: "1.0.0"
+        file: rosters/content/agents/agent-02-brand-steward-v1.0.0.yaml
+        role: "Brand Steward"
+        lifecycle_status: active
+        definition_depth: lean
+  - roster_id: roster-recruitment
+    name: "Recruitment"
+    version: "1.0.0"
+    document: rosters/recruitment/roster-recruitment-v1.0.0.md
+    # Genesis seed roster (roster-genesis-protocol v1.0.0, first live run).
+    # Agents at lifecycle 'draft' until first pre-flight activation (Stage 4);
+    # probation = first engagement (Stage 5).
+    agents:
+      - id: roster_recruitment_orchestrator_agent
+        version: "1.0.0"
+        file: rosters/recruitment/agents/agent-00-roster-recruitment-orchestrator-v1.0.0.yaml
+        role: "Recruitment Delivery Orchestrator"
+        lifecycle_status: draft
+        definition_depth: lean
+      - id: recruitment_talent_attraction_agent
+        version: "1.0.0"
+        file: rosters/recruitment/agents/agent-01-talent-attraction-v1.0.0.yaml
+        role: "Talent Attraction & Pipeline Specialist"
+        lifecycle_status: draft
+        definition_depth: lean
+      - id: recruitment_compliance_contracts_agent
+        version: "1.0.0"
+        file: rosters/recruitment/agents/agent-02-compliance-contracts-v1.0.0.yaml
+        role: "Compliance & Contracts Specialist (drafting only)"
+        lifecycle_status: draft
+        definition_depth: lean

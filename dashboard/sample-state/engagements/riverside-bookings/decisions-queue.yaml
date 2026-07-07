@@ -1,0 +1,75 @@
+# SAMPLE fixture — mirrors runtime/state.py StateEmitter.write_decisions_queue (schema decisions-queue/v1)
+# 'created' timestamps drive the age + AOM-timeout breach clocks the inbox shows.
+# Fictional demo business — generic role names, no real people or vendors.
+engagement: riverside-bookings
+schema: decisions-queue/v1
+open_items:
+  - id: DQ-001
+    kind: CREDENTIALS_REQUEST
+    title: "Repo + booking-provider + payment-provider access credentials (dependency D1)"
+    context: >
+      Repo assessment (M3) and Wave 4 start are blocked until the owner's own
+      service credentials are provided. BYOK — the framework holds none.
+    options: ["Provide keys via Credentials screen", "Defer (blocks build)"]
+    requested_by: delivery_project_manager_agent
+    owner: "the owner (human)"
+    created: "2026-07-05T07:00:00Z"
+    aom_class: "critical sign-off"
+    aom_timeout_hours: 24
+    linked_document: null
+  - id: DQ-002
+    kind: GATE_SIGNOFF
+    title: "QA sign-off for Wave 7 (quality gate)"
+    context: >
+      quality_qa_engineer_agent has produced qa-signoff-v1.0.0.yaml. Awaiting
+      human approval before release wave can proceed.
+    options: ["Approve", "Comment / request changes"]
+    requested_by: quality_qa_engineer_agent
+    owner: "the owner (human)"
+    created: "2026-07-06T06:30:00Z"
+    aom_class: "standard sign-off"
+    aom_timeout_hours: 48
+    linked_document: "qa-signoff-v1.0.0.yaml"
+  - id: DQ-003
+    kind: EXCLUSION_ZONE
+    title: "GAP-001 dynamic pricing touch — policy block requires owner decision"
+    context: >
+      A wave attempted to modify pricing configuration (owner exclusion zone).
+      Blocked by policy (integrity INT-00005). Owner must decide scope.
+    options: ["Confirm exclusion (keep blocked)", "Authorise scope change"]
+    requested_by: security_infosec_manager_agent
+    owner: "the owner (human)"
+    created: "2026-07-06T09:02:00Z"
+    aom_class: "critical sign-off"
+    aom_timeout_hours: 24
+    linked_document: null
+  - id: DQ-004
+    kind: RELEASE_APPROVAL
+    title: "Delivery plan v1.0.1 — approve bump (version diff available)"
+    context: >
+      delivery-plan bumped from v1.0.0 to v1.0.1 (wave resequence after w5
+      death). Review the diff and approve the bump.
+    options: ["Approve", "Comment / request changes"]
+    requested_by: delivery_project_manager_agent
+    owner: "the owner (human)"
+    created: "2026-07-06T09:10:00Z"
+    aom_class: "standard sign-off"
+    aom_timeout_hours: 48
+    linked_document: "delivery-plan-v1.0.1.md"
+  - id: GEN-roster-recruitment
+    kind: GENESIS_PROPOSAL
+    title: "New roster proposed: roster-recruitment (Recruitment) — human sign-off required"
+    context: >
+      A capability gap with no home in any existing roster survived the
+      right-sizing ladder at R3. Ladder conclusion: pipeline management,
+      compliance tracking and offer/contract drafting form an un-homed
+      discipline (attraction work already cascades to existing rosters at R1).
+      Nothing is built until this decision is logged
+      (roster-genesis-protocol Stage 3).
+    options: ["Approve", "Amend (comment)", "Reject (comment with reason)"]
+    requested_by: "ecl_orchestrator_agent + ai_manager_agent"
+    owner: "the owner (human)"
+    created: "2026-07-07T09:00:00Z"
+    aom_class: "critical sign-off"
+    aom_timeout_hours: 120
+    linked_document: "roster-genesis-proposal-recruitment.yaml"

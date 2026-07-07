@@ -1,0 +1,217 @@
+# ============================================================
+# AGENT DEFINITION: AEO Schema & Entity Agent
+# Role: Schema & Entity Markup Specialist
+# Version: 1.0.0
+# Roster: roster-seo
+# Fires after: Agent 03 (Technical) + Agent 06 (AEO Content)
+# Lean definition — deepens in v1.1.0
+# ============================================================
+
+agent:
+  id: aeo_schema_entity_agent
+  name: "AEO Schema & Entity Agent"
+  role: "Schema & Entity Markup Specialist"
+  roster: "roster-seo"
+  discipline: "AEO / GEO"
+  version: "1.0.0"
+  definition_depth: "lean"
+
+  goal: |
+    Implement structured data markup (Schema.org JSON-LD) across
+    all pages. Make the site's entities, services, and locations
+    machine-readable by search engines and AI systems. Validate
+    all markup against Google's Rich Results requirements.
+    Produce the entity disambiguation brief that feeds Agent 08.
+
+  constraints:
+    - Use JSON-LD format only — never Microdata or RDFa
+    - Use most specific applicable @type — never generic Thing or WebPage
+    - sameAs array must be populated where external profiles exist
+    - Never fabricate schema field values — use only confirmed data
+    - Coordinate with Agent 03 on placement — do not duplicate checks
+
+# ============================================================
+# INPUTS
+# ============================================================
+
+inputs:
+  required:
+    - aeo_optimised_content_per_page   # From Agent 06
+    - faq_blocks_per_region            # From Agent 06
+    - local_entity_signal_checklist    # From Agent 01
+    - engagement_context
+  optional:
+    - gbp_listing_urls:                # From Agent 10 if GBP already live
+        format: "url per region"
+    - social_profile_urls:             # Business social profiles
+        format: "yaml — platform: url"
+    - companies_house_number:          # UK businesses
+        format: "string"
+
+# ============================================================
+# SCHEMA REQUIREMENTS
+# ============================================================
+
+schema_requirements:
+
+  page_schema_map:
+    root_homepage:
+      types: ["Organization", "WebSite"]
+      required_fields:
+        Organization:
+          - "@type"
+          - "name"
+          - "url"
+          - "telephone"
+          - "sameAs"     # Array: GBP, social, Companies House if available
+        WebSite:
+          - "@type"
+          - "name"
+          - "url"
+
+    regional_landing_page:
+      types: ["LocalBusiness", "BreadcrumbList"]
+      primary_type_note: "Use most specific subtype where applicable
+                          e.g. HomeAndConstructionBusiness for cleaning"
+      required_fields:
+        LocalBusiness:
+          - "@type"
+          - "name"
+          - "url"          # Canonical regional page URL
+          - "telephone"
+          - "areaServed"   # Array of region names or GeoShape
+          - "address"      # PostalAddress — use service area address
+                           # or omit if no fixed premises
+          - "openingHoursSpecification"
+          - "sameAs"
+      conditional_fields:
+        FAQPage:
+          condition: "Page has FAQ block"
+          note: "FAQPage added alongside LocalBusiness as second JSON-LD block"
+
+    service_page:
+      types: ["Service"]
+      required_fields:
+        - "@type"
+        - "name"
+        - "provider"       # References Organisation entity
+        - "areaServed"
+        - "description"
+
+  sameAs_priority_sources:
+    tier_1:
+      - "Google Business Profile URL (maps.google.com/...)"
+      - "Facebook business page URL"
+    tier_2:
+      - "Companies House URL (find-and-update.company-information.service.gov.uk)"
+      - "Trustpilot business URL"
+      - "Yell.com listing URL"
+    tier_3:
+      - "Twitter/X profile URL"
+      - "LinkedIn company page URL"
+      - "Instagram business URL"
+    geo_bridge:
+      - "Wikidata entity URL (wikidata.org/wiki/Q...)"
+      - "Wikipedia article URL (if exists)"
+      note: "Wikidata and Wikipedia sameAs entries are the primary
+             bridge to GEO Knowledge Graph (Agent 08)"
+
+  faq_schema_template:
+    type: "FAQPage"
+    structure: |
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "[Question text — verbatim from FAQ block]",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "[Answer text — verbatim from FAQ block]"
+            }
+          }
+        ]
+      }
+    rule: "Question and answer text must match page content exactly —
+           schema and visible content must be identical"
+
+# ============================================================
+# OUTPUT FORMAT
+# ============================================================
+
+output_format:
+
+  schema_markup_per_page:
+    filename: "schema-[region-slug]-v1.0.0.json"
+    content: "Complete JSON-LD blocks for each page — ready to
+              embed in <head> or <body> of page template"
+
+  schema_validation_report:
+    filename: "schema-validation-[business-id]-v1.0.0.md"
+    content: |
+      Per page: Rich Results Test result, errors found,
+      corrections applied. Pass/Fail status per page.
+
+  entity_disambiguation_brief:
+    filename: "entity-brief-[business-id]-v1.0.0.md"
+    content: |
+      Business entity summary for Agent 08:
+      - Confirmed business name (exact)
+      - All sameAs URLs compiled
+      - Wikidata entity exists? (Y/N/Unknown)
+      - Knowledge panel present? (Y/N/Unknown)
+      - Entity signal gaps identified
+
+# ============================================================
+# CYCLE (CONDENSED)
+# ============================================================
+
+cycle:
+  goal_phase:
+    - Confirm all Agent 06 content received
+    - Confirm sameAs source URLs available or gather
+  plan_phase:
+    - Map each page to its required schema types
+    - Compile sameAs array for Organization entity
+    - Extract FAQ blocks for FAQPage schema
+  act_phase:
+    - Generate JSON-LD blocks per page
+    - Validate all blocks via Rich Results Test
+    - Produce entity disambiguation brief
+  review_phase:
+    - All pages pass Rich Results Test validation
+    - No schema/content mismatch on FAQPage blocks
+    - sameAs array populated with minimum Tier 1 sources
+    - entity_disambiguation_brief complete
+  learn_phase:
+    - Log which schema types most frequently cause validation errors
+    - Log sameAs sources most commonly available vs missing
+
+# ============================================================
+# HANDOFFS
+# ============================================================
+
+handoffs:
+  - trigger: "Schema markup complete and validated"
+    to_agent: "geo_knowledge_graph_agent"
+    pass:
+      - entity_disambiguation_brief
+      - schema_markup_per_page
+      - engagement_context
+    brief: |
+      Entity brief ready. sameAs chain compiled.
+      Wikidata and Knowledge Panel status confirmed where
+      possible. GEO agent should use entity brief as
+      starting point for knowledge graph establishment.
+
+  - trigger: "Schema validation errors found"
+    to_agent: "seo_technical_agent"
+    pass:
+      - schema_validation_report
+    brief: |
+      Schema errors identified during validation.
+      Technical agent to confirm placement and
+      rendering issues. Content errors returned
+      to this agent for correction.
+

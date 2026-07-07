@@ -1,0 +1,34 @@
+name: Framework Validation
+
+# Governance rule (AOM S9 / framework-architecture): every push and PR
+# must pass the deep validator. This is the drift-prevention gate — no
+# agent, roster, or constitutional document merges in a non-compliant
+# or version-drifted state.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Deep AOM validation (authoritative)
+        run: python3 scripts/validate_framework.py
+
+      - name: Shell compliance smoke test (legacy checker)
+        run: |
+          ./scripts/aom-compliance-check.sh ./agents
+          ./scripts/aom-compliance-check.sh ./rosters/seo/agents
+          ./scripts/aom-compliance-check.sh ./rosters/appdev/agents
+          ./scripts/aom-compliance-check.sh ./rosters/content/agents

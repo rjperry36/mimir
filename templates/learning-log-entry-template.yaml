@@ -1,0 +1,15 @@
+# Learning Log Entry — LEARN phase output (one entry per learning)
+learning:
+  id: ""                   # L-[roster]-[nnn]
+  date: ""
+  agent_id: ""
+  engagement: ""           # business-id / engagement ref
+  observation: |
+    # what happened — factual, evidence-linked
+  evidence: ""             # log ref / report ref / data source (non-fabrication)
+  hypothesis: |
+    # why it happened
+  proposed_change: |
+    # what to change (agent rule, brief format, tool, cadence)
+  bump_candidate: ""       # none / PATCH / MINOR — target document
+  status: ""               # logged / distilled / actioned / rejected

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What it's NOT — Mimir (honest limitations)</title>
+  <meta name="description" content="The blunt list of what Mimir is not: not production-ready (independent audit 58/100), live execution not yet proven, SME-scoped, not an autopilot, BYOK, not a guarantee of results. Honesty as a feature." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="dot"></span> Mimir</a>
+    <nav class="links">
+      <a href="index.html#what">What it is</a>
+      <a href="index.html#get">What you get</a>
+      <a href="index.html#use">How to use it</a>
+      <a href="index.html#achieves">What it achieves</a>
+      <a class="cta" href="what-its-not.html">What it's NOT</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="badge">The page the owner asked us to write first</span>
+    <h1>What it's NOT.</h1>
+    <p class="lede">
+      This project's whole ethos is honesty, so here is the blunt version. Everything below is
+      drawn from an <strong>independent audit</strong> and a <strong>live pilot test</strong> &mdash;
+      not marketing copy. If you take one thing away: this is a strong methodology whose execution
+      engine is still being wired.
+    </p>
+  </div>
+</div>
+
+<!-- The audit score -->
+<section id="audit">
+  <div class="wrap">
+    <p class="eyebrow">The independent verdict</p>
+    <h2>58/100 &mdash; classified &ldquo;Prototype Only&rdquo;</h2>
+    <p class="lead">
+      An independent Agentic System Auditor &mdash; fresh, adversarial, with no stake in the
+      project &mdash; scored the whole system and delivered the verdict unedited. It is
+      deliberately blunt: <em>&ldquo;disclosure of an absent runtime does not convert it into a
+      present one.&rdquo;</em>
+    </p>
+
+    <div class="card mt24">
+      <div class="score">
+        <div class="big">58<span class="den">/100</span></div>
+        <div class="meter">
+          <div class="track"><div class="fill"></div></div>
+          <div class="scale">
+            <span>0</span><span>Prototype (55&ndash;69)</span><span>Pilot</span><span>Production</span><span>100</span>
+          </div>
+        </div>
+      </div>
+      <p class="muted mt24" style="margin-bottom:0">
+        The score is deliberately <strong>bimodal</strong>, and the band reflects the weakest
+        production-critical layer, not an even mediocrity. Governance and validation scored
+        production-ready-grade (8/10 each); tool usage, state, and operational readiness scored
+        3&ndash;4/10 because there is no proven runtime. A system can't outrank its weakest
+        production-critical layer &mdash; so the whole classifies as Prototype Only.
+      </p>
+    </div>
+
+    <div class="tablewrap mt24">
+      <table>
+        <thead><tr><th>Layer</th><th>Score</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Governance</td><td><span class="pill good">8/10</span></td><td>Exceptional versioning, validator, CI, lifecycle</td></tr>
+          <tr><td>Validation</td><td><span class="pill good">8/10</span></td><td>Multi-layer independent gates; seeded defect caught twice</td></tr>
+          <tr><td>Human oversight</td><td><span class="pill good">7/10</span></td><td>Three human gates blocked and changed the product</td></tr>
+          <tr><td>Tool usage</td><td><span class="pill bad">3/10</span></td><td>No timeout/retry/fallback/auth; all external services were doubles</td></tr>
+          <tr><td>State management</td><td><span class="pill bad">4/10</span></td><td>Survived incidents by code hygiene, not by design</td></tr>
+          <tr><td>Operational readiness</td><td><span class="pill bad">3/10</span></td><td>No proven runtime, no isolation, no budgets</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted mt8" style="font-size:14px">The auditor's own summary: the <em>methodology</em> is roughly pilot-ready (~72); the <em>system as a whole</em>, including its unproven runtime and doubled tools, is Prototype Only (58).</p>
+  </div>
+</section>
+
+<!-- The blunt NOT list -->
+<section id="notlist">
+  <div class="wrap">
+    <p class="eyebrow">Be blunt with me</p>
+    <h2>Seven things this is not</h2>
+
+    <div class="notlist mt24">
+      <div class="not-item">
+        <div class="x">&times;</div>
+        <div>
+          <h3>NOT production-ready</h3>
+          <p>The independent audit scored it <strong>58/100 and classified it &ldquo;Prototype Only.&rdquo;</strong> It is fit for continued supervised pilot / internal reference use &mdash; not for unattended, customer-facing, or mission-critical work.</p>
+          <span class="truth">True status: supervised pilot / reference build.</span>
+        </div>
+      </div>
+
+      <div class="not-item">
+        <div class="x">&times;</div>
+        <div>
+          <h3>NOT proven in live execution</h3>
+          <p>Everything was tested against <strong>simulators and test doubles</strong> &mdash; every external service (Vercel, Neon, Clerk, a payment provider, a booking provider) was a mock. Nothing has run against real credentials. The runtime kernel logic is real and tested, but the part that spawns real agents is a documented stub. It needs a credentialed run to prove itself.</p>
+          <span class="truth">True status: kernel logic real; live run not yet demonstrated.</span>
+        </div>
+      </div>
+
+      <div class="not-item">
+        <div class="x">&times;</div>
+        <div>
+          <h3>NOT for global corporates</h3>
+          <p>It is <strong>SME-scoped (tiers T0&ndash;T2)</strong> by explicit owner decision. Multi-entity structures, nested/federated manifestos, and role-based access for enterprise (T3&ndash;T4) are documented as a future path but <strong>deliberately not built</strong> &mdash; building them now would be exactly the over-engineering the audit warns against.</p>
+          <span class="truth">True status: micro to mid-SME only.</span>
+        </div>
+      </div>
+
+      <div class="not-item">
+        <div class="x">&times;</div>
+        <div>
+          <h3>NOT a no-human autopilot</h3>
+          <p>Human approval gates are <strong>mandatory by design</strong>. Work blocks on your signature at manifesto sign-off, pre-flight, and release. In the pilot the human gates didn't rubber-stamp &mdash; they materially changed the product. If you want fully autonomous agents, this isn't that, on purpose.</p>
+          <span class="truth">True status: human-in-the-loop is a feature, not a gap.</span>
+        </div>
+      </div>
+
+      <div class="not-item">
+        <div class="x">&times;</div>
+        <div>
+          <h3>NOT a home for your API keys</h3>
+          <p>Bring your own key. The repo <strong>ships with none</strong>, your keys never leave your device, and they're redacted everywhere beyond the last 4 characters. Nobody can ever use the owner's credentials &mdash; the app fails loud and stops if a key is missing rather than falling back to a default.</p>
+          <span class="truth">True status: BYOK, keys stay local.</span>
+        </div>
+      </div>
+
+      <div class="not-item">
+        <div class="x">&times;</div>
+        <div>
+          <h3>NOT a guarantee of business results</h3>
+          <p>It produces auditable, disciplined delivery &mdash; not guaranteed outcomes. In the pilot the headline business metric was <strong>un-measurable at day 14</strong> (no analytics wired, no live traffic). The framework is honest that a well-run process is not the same as a proven result.</p>
+          <span class="truth">True status: good process ≠ guaranteed outcome.</span>
+        </div>
+      </div>
+
+      <div class="not-item">
+        <div class="x">&times;</div>
+        <div>
+          <h3>NOT a finished product</h3>
+          <p>It's a strong methodology with an engine still being wired. The governance and validation layers are genuinely excellent; the runtime, tool-resilience, and real-world integration layers are the acknowledged work in progress. Fund the trajectory &mdash; withhold the &ldquo;production&rdquo; label until the runtime exists.</p>
+          <span class="truth">True status: methodology strong, engine in progress.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Honesty as a feature -->
+<section id="honesty">
+  <div class="wrap">
+    <p class="eyebrow">Why we lead with this</p>
+    <h2>The honesty is the feature</h2>
+    <p class="lead">
+      Most &ldquo;agent framework&rdquo; pitches hide their gaps. This one built an auditor to find
+      them and publishes the score. The framework <strong>audits itself</strong> &mdash; and that
+      self-scrutiny is the strongest signal that its stated roadmap will actually be met.
+    </p>
+    <div class="grid three mt24">
+      <div class="card"><h3><span class="num">28</span> self-caught defects</h3><p>The pilot's most valuable output was a precise, evidence-backed catalogue of roughly 28 of its <em>own</em> process weaknesses.</p></div>
+      <div class="card"><h3><span class="num">3&times;</span> refused to fabricate</h3><p>The non-fabrication discipline held at every test point &mdash; the AI refused to present invented data three separate times.</p></div>
+      <div class="card"><h3><span class="num">2&times;</span> caught a planted bug</h3><p>A deliberately disguised seeded defect was caught independently by two different reviewers, from different evidence.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section id="roadmap">
+  <div class="wrap">
+    <p class="eyebrow">What comes next</p>
+    <h2>The honest roadmap</h2>
+    <p class="lead">The gaps above are not a mystery to the project &mdash; they are its named next milestones, in order.</p>
+    <ol class="steps mt24">
+      <li><strong>Wire the runtime executor</strong><span>Connect the tested kernel to real subagent spawning, so waves fire, timeouts track, and dead agents are detected without a human turning the crank.</span></li>
+      <li><strong>Add a tool-resilience layer</strong><span>Give every tool a timeout, retry, fallback, and auth contract &mdash; the single most production-critical gap &mdash; then prove it against real services in a staging tier.</span></li>
+      <li><strong>Productise into the Mimir Console</strong><span>A single-operator dashboard: wave board, decision inbox, RAG/RAID, and a document review-and-approval surface &mdash; the human-gate interface, built on BYOK.</span></li>
+    </ol>
+    <p class="muted mt24" style="font-size:14.5px">
+      Explicitly reserved and <strong>not</strong> being built: enterprise/global multi-entity
+      support (nested manifestos, role-based access, federated cascade). Named, scoped, and left
+      uncoded &mdash; on purpose.
+    </p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div style="max-width:36ch">
+        <a class="brand" href="index.html"><span class="dot"></span> Mimir</a>
+        <p class="muted mt8" style="font-size:14px">If this page put you off, it did its job: you now know exactly what you'd be adopting, and what you wouldn't.</p>
+        <p class="mt8"><a class="btn ghost" href="index.html">&larr; Back to what it is</a></p>
+      </div>
+      <div>
+        <h4>Sources</h4>
+        <ul>
+          <li>Independent ASA verdict v1.0.0</li>
+          <li>Pilot test report v1.0.0 (6 PASS / 2 PARTIAL)</li>
+          <li>Framework architecture v1.2.2</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="https://github.com/rjperry36/mimir">GitHub repository</a></li>
+          <li><a href="index.html#byok">BYOK &amp; security</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Every claim on this page traces to the independent audit or the live pilot report. Nothing here is aspirational. Independently audited 58/100 &mdash; &ldquo;Prototype Only&rdquo;.</p>
+  </div>
+</footer>
+
+</body>
+</html>

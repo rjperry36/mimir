@@ -1,0 +1,13 @@
+# Human Override Log Entry — AOM Section 7.4
+override_log_entry:
+  date: ""                 # ISO8601
+  agent_id: ""
+  condition_triggered: ""  # which AOM S7.1 condition
+  task_paused: ""
+  escalated_to: ""
+  notified_via: ""
+  response_deadline: ""    # per AOM S7.3 timeouts
+  resolution: ""           # what the human decided
+  resolved_date: ""
+  agent_resumed: ""        # yes / no
+  post_review: ""          # did this reveal an agent-definition gap? PATCH proposed?

@@ -1,0 +1,72 @@
+# SAMPLE fixture — fictional demo business (Riverside Bookings); no real data.
+# A drafted roster-genesis proposal as it reaches the owner: decision fields
+# EMPTY — this document is what the GEN-roster-recruitment inbox item links to.
+roster_genesis_proposal:
+  proposed_roster_id: "roster-recruitment"
+  date: "2026-07-07"
+  drafted_by: "ecl_orchestrator_agent + ai_manager_agent (runtime-drafted; not self-approved)"
+  trigger:
+    source: "interview"
+    evidence: "ECL interview genesis_candidate: HR & People objective — hire 6
+      seasonal operations staff before peak season (transcript §HR-2; locker:LK-011
+      staffing plan). No built roster homes the recruitment discipline."
+    ecl_objectives_served:
+      - "HR & People: 6 seasonal operations hires before peak season"
+
+  right_sizing_analysis:
+    r1_existing_roster_strategy:
+      considered: ["roster-content (job-ad copy)", "roster-seo (careers-page discoverability)", "roster-appdev (application form)"]
+      why_insufficient: "They serve the attraction surface only — none houses
+        pipeline management, right-to-work/reference compliance tracking, or
+        offer/contract drafting."
+      partially_adopted: "YES — job-ad copy, careers page and discoverability
+        cascade to the existing rosters via ECL routes (reuse rule)."
+    r2_new_agent_in_existing_roster:
+      considered: "Single recruitment agent inside roster-content or roster-appdev"
+      why_insufficient: "Pipeline + compliance + contract drafting is not one
+        specialism and is not content or app-dev discipline work; its human-gate
+        regime (every offer human-signed) belongs to neither host."
+    conclusion: "Recruitment is a genuine un-homed discipline (R3)."
+
+  discipline: "Recruitment"
+  mission: |
+    Turn the seasonal-hiring objective into a managed candidate pipeline with
+    evidence-backed compliance and human-signed offers, consuming attraction
+    work from the rosters that own it.
+  tier_fit: ["T1"]
+
+  seed_team:
+    - id: "roster_recruitment_orchestrator_agent"
+      role: "Recruitment Delivery Orchestrator"
+      goal_one_line: "Decompose objective, dispatch specialists, enforce human-decision gates"
+      key_gates: ["non-fabrication", "no autonomous hiring decisions"]
+    - id: "recruitment_talent_attraction_agent"
+      role: "Talent Attraction & Pipeline Specialist"
+      goal_one_line: "Channels, role profiles, staged pipeline, funnel tracking"
+      key_gates: ["non-fabrication", "recommendations only — humans decide"]
+    - id: "recruitment_compliance_contracts_agent"
+      role: "Compliance & Contracts Specialist (drafting only)"
+      goal_one_line: "Evidence-referenced checks; offer/contract DRAFTS only"
+      key_gates: ["non-fabrication", "contract release gate — every offer human/legal-signed"]
+  toolbox_needs:
+    existing_tools_reused: ["Document store"]
+    new_tools: ["Candidate pipeline tracker (document-based)", "Compliance checklist register"]
+
+  cross_roster_routes:
+    consumes: ["roster-content: job-ad copy (via ECL)", "roster-appdev: application form (via ECL)"]
+    offers: ["Hiring-funnel progress to the ECL"]
+
+  human_gates_and_exclusion_zones: |
+    Every offer and contract: mandatory human/legal sign-off before issue.
+    No autonomous hiring/rejection decisions. Candidate personal data stays
+    in the private instance only.
+
+  expansion_path: ["recruitment_onboarding_agent"]
+  retirement_condition: "Not activated within 2 quarterly cycles -> propose archive"
+  estimated_cost_note: "~8-12 agent-runs per hiring cycle"
+
+  # ---- decision (human only — THIS IS WHAT YOU ARE APPROVING) ----
+  decision: ""
+  decision_by: ""
+  decision_date: ""
+  amendments_or_rejection_reason: ""

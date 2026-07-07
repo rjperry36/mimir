@@ -1,0 +1,18 @@
+# User Story — [story-id]
+story_id: ""
+epic: ""                # the epic this story rolls up to — REQUIRED for backlog-level priority tally
+priority: ""            # must / should / could
+as_a: ""                # the user/role
+i_want: ""              # the capability
+so_that: ""             # the outcome
+source: ""              # engagement_context / ECL ref / human-confirmed input — REQUIRED (non-fabrication)
+acceptance_criteria:    # testable, Given/When/Then
+  - given: ""
+    when: ""
+    then: ""
+non_functional_notes: ""  # perf/a11y/security constraints that apply
+open_questions:           # gaps for human input — never assumed. Each carries a blocking flag.
+  - question: ""
+    owner: ""             # who must answer
+    blocking: false       # true = this story cannot pass QA / go to build until answered
+status: ""                # draft / confirmed / in-build / verified

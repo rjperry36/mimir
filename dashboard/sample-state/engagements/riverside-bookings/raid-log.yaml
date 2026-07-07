@@ -1,0 +1,240 @@
+# RAID Log — riverside-bookings / booking-app brownfield rebuild
+# Living document — owned by delivery_project_manager_agent. Append-only ids.
+# Fictional demo business — generic roles and vendors only, no real client data.
+# Sources: engagement contract; ecl-summary-card-v1.0.0.md;
+# cascade-riverside-bookings-v1.0.0-2026-07-03.md; preflight-riverside-bookings-2026-07-03.md;
+# roster-appdev-v1.0.2.md (wave sequence).
+business_id: "riverside-bookings"
+engagement: "roster-appdev / brownfield website-booking-app rebuild (ECL 3.6)"
+updated: "2026-07-03"
+
+risks:
+  - id: R1
+    description: >
+      Repo access to the owner's booking-app repository is not yet confirmed.
+      The repo assessment (M3, first technical deliverable per cascade) cannot
+      start without it — blocks Wave 4 and everything after.
+    likelihood: med
+    impact: high
+    mitigation: >
+      Credentials request already recorded as a named human dependency
+      (pre-flight section 4, credentials-template.yaml). Track as D1; escalate
+      per critical sign-off timeout (24h) once Wave 3 nears completion.
+    owner: "delivery_project_manager_agent (escalation: the owner via orchestrator)"
+    status: open
+  - id: R2
+    description: >
+      The booking provider's API capabilities are unverified — live
+      availability, booking-confirmation trigger data, and the GAP-025
+      repeat-customer extract all assume the API supports them. If it does not,
+      core scope items need redesign (embed-only fallback is a product
+      decision, not a PM one).
+    likelihood: med
+    impact: high
+    mitigation: >
+      Verify API capabilities during Wave 4 architecture (Agent 04) before any
+      engineering wave fires (principle D1). Any shortfall routed to
+      orchestrator/owner as scope decision.
+    owner: architecture_solution_design_agent
+    status: open
+  - id: R3
+    description: >
+      GAP-001 (committed dynamic pricing) blocks any repricing go-live and any
+      booking-engine repricing reconfiguration. Pricing is an owner exclusion
+      zone. Risk: repricing expectations leak into build scope.
+    likelihood: low
+    impact: high
+    mitigation: >
+      Plan explicitly excludes pricing reconfiguration (delivery plan sections
+      1 and 3C). Any pricing-touching request = immediate hold +
+      scope_change_record + owner sign-off. Does not block the build itself
+      (cascade, sign-off section).
+    owner: delivery_project_manager_agent
+    status: open
+  - id: R4
+    description: >
+      Gate integration contract is undocumented: a QR-code gate device
+      validates booking references against the booking database — a confirmed
+      REAL integration the rebuilt app must serve or preserve (cascade change
+      2). No interface spec (DB shape, query path, device protocol) exists in
+      agent-visible context. Breaking it strands customers at the gate.
+    likelihood: med
+    impact: high
+    mitigation: >
+      Documenting the integration contract is a named M4 exit criterion (Agent
+      04) before database work (M6) starts; verification against the contract
+      is a go-live checklist item (3A).
+    owner: architecture_solution_design_agent
+    status: open
+  - id: R5
+    description: >
+      Single-owner decision bottleneck: the owner is the sole sign-off for all
+      exclusion zones, credentials, GAP-001/012/024/025 decisions, and the go
+      decision (ECL card; pre-flight section 4). Owner unavailability stalls
+      multiple waves at once.
+    likelihood: med
+    impact: med
+    mitigation: >
+      Batch owner decisions into the per-wave client pack; give advance notice
+      of upcoming decision points (GAP-024 at Wave 3, GAP-012 + credentials at
+      Wave 4); apply AOM timeout classes and escalate per the cascade
+      acknowledgement protocol. Co-founder counter-signature outstanding
+      (GAP-028) — no confirmed second signatory.
+    owner: delivery_project_manager_agent
+    status: open
+  - id: R6
+    description: >
+      Test-double-to-production migration risk: the pilot runs the hosting
+      platform, database, auth provider and email provider in declared
+      test-double mode with a locally-run pipeline (engagement pilot note).
+      Behaviour verified against doubles may not hold against real services
+      (auth flows, email deliverability, DB behaviour, deploy environment), and
+      the QA/UX/security sign-offs must remain valid in the production
+      configuration.
+    likelihood: med
+    impact: high
+    mitigation: >
+      Milestone M9b requires migration complete AND re-verification in the
+      production configuration before the go decision; go-live checklist 3C
+      makes it blocking. Sign-off agents confirm validity post-migration.
+    owner: "devops_repo_cicd_agent (coordination: roster_appdev_orchestrator_agent)"
+    status: open
+  - id: R7
+    description: >
+      No engagement budget envelope is stated in the ECL (pre-flight section 1
+      — only the ad-spend baseline is recorded, which is not a build budget).
+      The PM cannot cost-control or assess budget impact of changes; any new
+      spend (SaaS tiers at production migration, tooling) is an owner
+      exclusion-zone commitment.
+    likelihood: high
+    impact: med
+    mitigation: >
+      No budget figure invented (non-fabrication gate). Flag to orchestrator
+      for owner decision on whether an envelope will be set. Until then, every
+      spend-bearing item routes to owner sign-off individually.
+    owner: "delivery_project_manager_agent (decision: the owner via orchestrator)"
+    status: open
+  - id: R8
+    description: >
+      Live-trading cutover risk: the booking site is the sole revenue channel;
+      any booking/payment outage during cutover = MAJOR immediate owner
+      escalation (cascade must-not-do). Brownfield cutovers on live channels
+      are the highest-exposure step of the plan.
+    likelihood: med
+    impact: high
+    mitigation: >
+      Cutover is an explicit milestone (M9b) owned by devops_repo_cicd_agent,
+      fired only after all Wave 9 sign-offs; cutover-safety items are blocking
+      go-live checklist entries (3C). Escalation path pre-agreed in the
+      communication cadence.
+    owner: devops_repo_cicd_agent
+    status: open
+  - id: R9
+    description: >
+      Brownfield unknown: the existing in-development repo may be assessed as
+      unfit to extend (contemplated by pre-flight, Agent 04 row), triggering a
+      MAJOR owner decision and a re-plan of Waves 5-9 effort.
+    likelihood: med
+    impact: med
+    mitigation: >
+      Repo assessment is deliberately sequenced first (M3) so the finding
+      lands before any engineering investment; a re-plan would be handled via
+      scope_change_record to the orchestrator.
+    owner: architecture_solution_design_agent
+    status: open
+
+assumptions:
+  - id: A1
+    description: >
+      The owner's booking-app repository is the correct, current
+      in-development codebase for the rebuild.
+    validated: false
+    validation_route: "M3 repo assessment (architecture_solution_design_agent) once D1 access lands"
+  - id: A2
+    description: >
+      The roster default web stack (hosting platform / database / auth
+      provider / framework) applies to this engagement unless Agent 04 records
+      an ADR exception; confirmation-email tooling is explicitly TBC
+      (engagement facts) and is NOT assumed to be the default email provider.
+    validated: false
+    validation_route: "M4 ADR (architecture_solution_design_agent); stack replacement = MAJOR per roster bump map"
+  - id: A3
+    description: >
+      The booking provider's API supports live availability queries,
+      confirmation triggers, and the repeat-customer data extract (GAP-025
+      pipeline).
+    validated: false
+    validation_route: "Wave 4 API capability verification (architecture_solution_design_agent) — see R2"
+  - id: A4
+    description: >
+      The booking database the QR-code gate validates against can be served or
+      preserved by the rebuilt app without gate-side firmware changes.
+    validated: false
+    validation_route: "M4 gate integration contract documentation — see R4/D6"
+  - id: A5
+    description: >
+      The declared test doubles faithfully represent production SaaS behaviour
+      closely enough that pre-migration verification is meaningful.
+    validated: false
+    validation_route: "M9b re-verification in production configuration — see R6"
+  - id: A6
+    description: >
+      Wave 1 was briefed as a live engagement, implying the pre-flight record
+      human signature (roster activation condition) exists.
+    validated: false
+    validation_route: "Issue I1 — orchestrator to confirm signed record"
+
+issues:
+  - id: I1
+    description: >
+      The pre-flight record copy provided to this agent
+      (preflight-riverside-bookings-2026-07-03.md) has a BLANK signature line,
+      while the cascade states roster-appdev activates only on the
+      human-signed pre-flight record, and the lifecycle rule calls unsigned
+      activation a compliance failure. Wave 1 is running under an
+      "engagement starting" brief — the signed instance needs confirming.
+    severity: med
+    owner: roster_appdev_orchestrator_agent
+    status: open
+
+dependencies:
+  - id: D1
+    description: "Repo + booking-provider + payment-provider access credentials for roster-appdev (per instance credentials/credentials-template.yaml)"
+    depends_on: "the owner (human)"
+    needed_by: "M3 / Wave 4 start (repo assessment)"
+    timeout_ref: "critical sign-off 24h"
+  - id: D2
+    description: "GAP-024 AI chat/FAQ scope approval — designed option prepared in Wave 3 for owner decision"
+    depends_on: "the owner (human)"
+    needed_by: "End of Wave 3 (M2) — decision needed before build scope freezes at M4"
+    timeout_ref: "critical sign-off 24h"
+  - id: D3
+    description: "GAP-012 analytics stack confirmation (nothing ships unmeasured — go-live checklist 3A)"
+    depends_on: "the owner (human)"
+    needed_by: "M4 (ADR) at latest; instrumented by M10"
+    timeout_ref: "critical sign-off 24h"
+  - id: D4
+    description: "GAP-025 booking-provider booking-data extract + several years of accounts (North Star baseline; feeds M10 reporting)"
+    depends_on: "the owner (human)"
+    needed_by: "First monthly management review (per pre-flight section 4)"
+    timeout_ref: "executive 5 business days"
+  - id: D5
+    description: "GAP-001 committed dynamic pricing decision — blocks any repricing go-live only, NOT the build"
+    depends_on: "the owner (human — exclusion zone)"
+    needed_by: "Before any repricing go-live (out of current scope)"
+    timeout_ref: "critical sign-off 24h (when raised)"
+  - id: D6
+    description: "Gate integration contract documentation (QR-code gate booking-reference validation against booking DB)"
+    depends_on: "architecture_solution_design_agent (with owner input on gate configuration)"
+    needed_by: "M4 exit — before database work (M6) starts"
+    timeout_ref: "critical sign-off 24h (for owner-input portions)"
+  - id: D7
+    description: "Confirmation email tooling decision (TBC per engagement facts) — technical decision, not PM"
+    depends_on: "architecture_solution_design_agent (ADR)"
+    needed_by: "M4 exit — before back-end confirmations build (M7)"
+    timeout_ref: ""
+  - id: D8
+    description: "Wave-1 handoff of delivery_plan + raid_log confirmed by orchestrator before Wave 2 (analysis_business_analyst_agent) fires"
+    depends_on: "roster_appdev_orchestrator_agent"
+    needed_by: "Wave 2 start (M1)"
+    timeout_ref: ""

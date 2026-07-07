@@ -1,0 +1,113 @@
+# Brand Kit — [business-id]
+# Template version: v1.0.0
+# Owner: content_brand_steward_agent (elicits, versions, enforces)
+# Consumed by: roster_content_orchestrator_agent, content_copywriter_agent,
+#              and any roster producing brand-facing output (via engagement_context)
+#
+# The brand kit is the per-element change-tolerance instrument for a business's
+# brand. It refines, at brand granularity, the `brand` area of the ECL
+# mandate/change-tolerance matrix (ecl_interview_agent v2.0.0). Every element
+# carries a tolerance (LOCKED / REFRESH-WITHIN-BOUNDS / OPEN), a WHY with a
+# why_class, and a provenance citation. Nothing is assumed — an element with no
+# stated tolerance/why is logged TBC, never guessed.
+
+brand_kit:
+  business_id: ""
+  version: ""                     # this brand kit's own semver (voice/brand changes are versioned — CT1)
+  status: ""                      # draft / confirmed / signed-off
+  last_updated: ""                # ISO8601
+
+  # ── POSTURE ───────────────────────────────────────────────
+  # The engagement's boundary profile against the brand. Sets the DEFAULT
+  # tolerance any element inherits unless it declares its own.
+  posture: ""                     # create / refresh / adhere
+  posture_notes: |
+    create  = no existing brand; the kit is being built from scratch (most OPEN).
+    refresh = an existing brand is evolving within bounds (mixed LOCKED/REFRESH).
+    adhere  = an established brand must be followed exactly (most LOCKED).
+
+  # ── TOLERANCE VOCABULARY ──────────────────────────────────
+  tolerance_vocabulary:
+    LOCKED: "Must not change. Bound by the WHY."
+    REFRESH-WITHIN-BOUNDS: "May evolve inside stated bounds (record the bounds)."
+    OPEN: "Agents may propose and, within authority, act."
+  why_classes:
+    preference: "Owner taste/opinion — tradeable with owner agreement."
+    contractual: "Bound by a contract/partner obligation — tradeable only by human-signed renegotiation."
+    regulatory: "Bound by law/regulation — NEVER tradeable by any agent; changes only on documented regulatory change with human sign-off."
+
+  # ── ELEMENTS ──────────────────────────────────────────────
+  # One entry per brand element. Provenance cites the source that establishes
+  # the element and backs any LOCK: a locker:<id> evidence-locker item, a brand
+  # guidelines page, or a human-confirmed transcript reference.
+  elements:
+    - element: "logo"
+      tolerance: ""               # LOCKED / REFRESH-WITHIN-BOUNDS / OPEN
+      bounds: ""                  # required when REFRESH-WITHIN-BOUNDS (e.g. "monochrome variants allowed, mark unchanged")
+      why: ""
+      why_class: ""               # preference / contractual / regulatory
+      provenance: ""              # locker:<id> / brand-guidelines ref / human-confirmed
+    - element: "lockup"           # logo + wordmark spatial relationship, clear space
+      tolerance: ""
+      bounds: ""
+      why: ""
+      why_class: ""
+      provenance: ""
+    - element: "colour_palette"
+      tolerance: ""
+      bounds: ""                  # e.g. "shade may shift, hue family LOCKED"
+      why: ""
+      why_class: ""
+      provenance: ""
+    - element: "typography"
+      tolerance: ""
+      bounds: ""
+      why: ""
+      why_class: ""
+      provenance: ""
+    - element: "tone_of_voice"
+      tolerance: ""
+      bounds: ""
+      why: ""
+      why_class: ""
+      provenance: ""              # ties to ECL Why/What/How/When + any voice guide
+    - element: "imagery"
+      tolerance: ""
+      bounds: ""
+      why: ""
+      why_class: ""
+      provenance: ""
+    - element: "layout"
+      tolerance: ""
+      bounds: ""
+      why: ""
+      why_class: ""
+      provenance: ""
+
+  # ── VERIFIED CLAIMS ───────────────────────────────────────
+  # The set of factual claims the brand is permitted to make in copy. Each
+  # claim is verified against evidence — unverified claims are NOT usable and
+  # are logged as gaps (non-fabrication). Copy agents may use only this set.
+  verified_claims:
+    - claim: ""
+      evidence: ""                # locker:<id> / measured source / human-confirmed
+      verified_by: ""             # named person/role
+      verified_date: ""
+      status: ""                  # verified / pending / rejected
+      usage_bounds: ""            # any wording/context limits (e.g. regulated wording)
+
+  # ── ACCESSIBILITY REQUIREMENTS ────────────────────────────
+  accessibility:
+    text_contrast_min: "4.5:1"    # WCAG 2.2 AA normal text
+    large_text_contrast_min: "3:1"
+    non_text_contrast_min: "3:1"  # SC 1.4.11 — UI components, focus indicators, graphics
+    focus_indicator: ""           # visible focus requirement
+    min_target_size: ""           # e.g. 24x24 CSS px (SC 2.5.8)
+    notes: ""                     # any brand-specific a11y constraints (e.g. mandated alt-text style)
+
+  # ── OPEN QUESTIONS / TBC ──────────────────────────────────
+  # Elements or claims that could not be established — never assumed.
+  open_questions:
+    - item: ""
+      owner: ""                   # who must answer
+      blocking: false             # true = brand-facing output cannot ship until answered

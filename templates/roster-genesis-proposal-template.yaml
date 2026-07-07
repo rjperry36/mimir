@@ -1,0 +1,55 @@
+# Roster Genesis Proposal — per constitutional/roster-genesis-protocol
+# One proposal per candidate roster. Drafted by ECL Orchestrator + AI Manager;
+# NEVER self-approved — a new roster always requires human sign-off (AOM S4).
+roster_genesis_proposal:
+  proposed_roster_id: ""            # roster-{discipline} (AOM naming)
+  date: ""
+  drafted_by: ""                    # agent ids / runtime
+  trigger:
+    source: ""                      # interview / preflight-gap / scope-event / learn-harvest
+    evidence: ""                    # gap statement + artifact reference (traceable)
+    ecl_objectives_served: []       # which ECL objective(s) this discipline serves
+
+  # ---- Stage 0 ladder (MANDATORY — proposal returned unread without it) ----
+  right_sizing_analysis:
+    r1_existing_roster_strategy:
+      considered: []                # rosters/agents evaluated
+      why_insufficient: ""          # specific, not generic
+      partially_adopted: ""         # any part of the need R1 DOES serve (reuse rule)
+    r2_new_agent_in_existing_roster:
+      considered: ""                # which roster could host a single new agent
+      why_insufficient: ""
+    conclusion: ""                  # why this is a genuine un-homed DISCIPLINE (R3)
+
+  discipline: ""
+  mission: |                        # one paragraph
+  tier_fit: []                      # T0/T1/T2 engagement tiers that would activate it
+
+  # ---- Seed team — HARD CAP: orchestrator + max 3 specialists, all lean ----
+  seed_team:
+    - id: ""                        # {discipline}_{role}_agent
+      role: ""
+      goal_one_line: ""
+      key_gates: []                 # incl. non-fabrication (always) + role-specific
+  toolbox_needs:
+    existing_tools_reused: []
+    new_tools: []                   # each flagged per AOM S6 (toolbox proposal)
+
+  cross_roster_routes:              # reuse rule made explicit
+    consumes: []                    # e.g. "roster-content: copy production"
+    offers: []
+
+  human_gates_and_exclusion_zones: |
+    # anything legally sensitive / spend-committing / brand-affecting the team
+    # touches, with its mandatory human gate stated HERE (e.g. contracts:
+    # drafting only, every contract human/legal-signed — never autonomous)
+
+  expansion_path: []                # likely future agents, in order
+  retirement_condition: ""          # default: not activated within 2 quarterly cycles -> propose archive
+  estimated_cost_note: ""           # agent-runs per engagement cycle, rough
+
+  # ---- decision (human only) ----
+  decision: ""                      # approved / amended / rejected
+  decision_by: ""
+  decision_date: ""
+  amendments_or_rejection_reason: ""

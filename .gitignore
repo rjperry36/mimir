@@ -1,0 +1,15 @@
+.DS_Store
+
+# BYOK — never commit credentials (owner security requirement)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/*.yaml
+!credentials/*-template.yaml
+
+# Python build artifacts
+__pycache__/
+*.pyc

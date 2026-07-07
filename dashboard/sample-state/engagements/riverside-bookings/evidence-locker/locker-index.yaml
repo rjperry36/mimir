@@ -1,0 +1,25 @@
+# SAMPLE fixture — evidence-locker index (fictional demo business).
+# Items stored VERBATIM; every ECL claim cites a locker id. Never edited.
+engagement: riverside-bookings
+items:
+  - id: LK-001
+    file: booking-volumes-2025.csv
+    type: csv
+    source: "Booking system export"
+    supplier: "the owner"
+    received: "2026-07-05"
+    sha256: "e86fa6b1fc374a86add43f2511e6c9a15f869b5ac7d5a84ee74c05a64cbfbc90"
+  - id: LK-002
+    file: agency-commission-statement.md
+    type: document
+    source: "Agency statements (owner extract)"
+    supplier: "the owner"
+    received: "2026-07-05"
+    sha256: "fbb27be8c383779ac2ab67f1b262410361a145222e3d9afa878811ea417b7d47"
+  - id: LK-003
+    file: riverside-price-list-2026.pdf
+    type: pdf
+    source: "Published price list"
+    supplier: "the owner"
+    received: "2026-07-05"
+    sha256: "518f0eb82195cb88d02f59112a3175ea94299ab7474adb2df066ec1109cbdda2"

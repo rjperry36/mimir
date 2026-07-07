@@ -1,0 +1,127 @@
+# ============================================================
+# ROSTER GENESIS PROPOSAL — roster-recruitment (APPROVED)
+# Per constitutional/roster-genesis-protocol v1.0.0
+# This is the protocol's first live execution, run as a framework
+# demonstration against the protocol's own worked example (a
+# FICTIONAL domiciliary care provider — no real client data).
+# Retained with the roster as its provenance record (Stages 0–3).
+# ============================================================
+roster_genesis_proposal:
+  proposed_roster_id: "roster-recruitment"
+  date: "2026-07-07"
+  drafted_by: "runtime, drafting as ecl_orchestrator_agent + ai_manager_agent (protocol Stage 2); neither approved its own draft"
+  trigger:
+    source: "interview"
+    evidence: "Demonstration scenario per roster-genesis-protocol §Worked Example:
+      a fictional domiciliary care provider's ECL interview lands a headcount
+      objective in the HR & People domain — recruit 12 care workers in 6 months.
+      No existing roster homes the recruitment discipline."
+    ecl_objectives_served:
+      - "HR & People: recruit 12 care workers in 6 months (fictional demonstration objective)"
+
+  # ---- Stage 0 ladder (MANDATORY — proposal returned unread without it) ----
+  right_sizing_analysis:
+    r1_existing_roster_strategy:
+      considered:
+        - "roster-content (job-ad copy, employer-brand content, careers-page copy)"
+        - "roster-seo (careers-page discoverability)"
+        - "roster-appdev (careers page / application-form build)"
+      why_insufficient: "These rosters serve the ATTRACTION surface of recruitment
+        (copy, discoverability, a page that takes applications) but none houses
+        candidate pipeline management, care-sector pre-employment compliance
+        tracking (DBS, right-to-work, references, safeguarding training), or
+        offer/contract drafting. Those are recruitment-discipline work with
+        recruitment-specific quality gates."
+      partially_adopted: "YES — the attraction half IS served at R1: job-ad and
+        employer-brand copy routes to roster-content, careers-page build to
+        roster-appdev, discoverability to roster-seo, all via existing ECL
+        routes. This roster does NOT duplicate any of it (reuse rule)."
+    r2_new_agent_in_existing_roster:
+      considered: "A single recruitment agent inside roster-content (nearest
+        neighbour via job-ad work) or roster-appdev (pipeline tooling)."
+      why_insufficient: "Pipeline management + compliance tracking + contract
+        drafting is not one specialism, and none of it is content or app-dev
+        discipline work — bolting it onto either roster violates the discipline
+        rule (a roster houses a discipline, not a task). The compliance/contracts
+        work also carries its own mandatory human-gate regime that neither
+        host roster's gates cover."
+    conclusion: "Recruitment is a genuine un-homed discipline: its work
+      (pipeline, sector compliance, offer drafting), its tools (ATS/checklist
+      tracking), and its quality gates (every offer/contract human/legal-signed;
+      no autonomous candidate decisions) belong to no existing roster. R3."
+
+  discipline: "Recruitment"
+  mission: |
+    Run the recruitment engagement for a client hiring objective: turn an ECL
+    headcount objective into a managed candidate pipeline — sourcing channels,
+    role profiles, stage tracking, pre-employment compliance evidence, and
+    human-ready offer/contract drafts — while consuming attraction work
+    (copy, pages, discoverability) from the rosters that own those disciplines.
+    Humans make every hiring decision and sign every offer and contract.
+  tier_fit: ["T1", "T2"]   # T0 (micro) engagements route recruitment needs at R1 only
+
+  # ---- Seed team — HARD CAP: orchestrator + max 3 specialists, all lean ----
+  seed_team:
+    - id: "roster_recruitment_orchestrator_agent"
+      role: "Recruitment Delivery Orchestrator"
+      goal_one_line: "Decompose the hiring objective, dispatch specialists, route attraction work out via the ECL, enforce the human-decision gates, report funnel status"
+      key_gates: ["non-fabrication", "no autonomous hiring decisions", "offer/contract issue requires logged human/legal sign-off"]
+    - id: "recruitment_talent_attraction_agent"
+      role: "Talent Attraction & Pipeline Specialist"
+      goal_one_line: "Role profiles, sourcing channel plan, pipeline stage design and funnel tracking — copy and pages consumed from owning rosters, never produced here"
+      key_gates: ["non-fabrication (market/salary data sourced or TBC)", "candidate-facing text only from human-approved templates", "screening recommendations only — never rejections"]
+    - id: "recruitment_compliance_contracts_agent"
+      role: "Compliance & Contracts Specialist (drafting only)"
+      goal_one_line: "Track pre-employment checks as evidence-referenced checklists; DRAFT offers/contracts from approved templates — issue is always a human/legal act"
+      key_gates: ["non-fabrication (no check marked passed without evidence reference)", "contract release gate: nothing leaves draft without logged human/legal sign-off", "no legal advice — legal determinations are human"]
+  toolbox_needs:
+    existing_tools_reused:
+      - "Document store (instance outputs/ directory)"
+      - "roster-content marketingskills toolbox — consumed via route, not duplicated"
+    new_tools:
+      - "Candidate pipeline tracker (spreadsheet/ATS-lite) — flagged per AOM S6; starts as a structured document, no new SaaS commitment"
+      - "Compliance checklist register (per-candidate evidence index) — flagged per AOM S6; document-based"
+
+  cross_roster_routes:
+    consumes:
+      - "roster-content: job-ad copy, employer-brand content, candidate comms templates (via ECL)"
+      - "roster-appdev: careers page / application form build (via ECL)"
+      - "roster-seo: careers-page discoverability review (via ECL)"
+    offers:
+      - "Hiring-funnel performance data back to the ECL (objective progress reporting)"
+      - "Role-profile facts as verified inputs to roster-content briefs"
+
+  human_gates_and_exclusion_zones: |
+    1. EVERY offer and EVERY employment contract is a mandatory human/legal
+       sign-off before issue — drafting only inside the roster, per the AOM's
+       standing rule that legal determinations are never autonomous.
+    2. NO autonomous hiring, rejection, or screening decisions — agents
+       produce evidence and recommendations; humans decide.
+    3. Compliance check statuses (DBS, right-to-work, references, safeguarding)
+       are recorded ONLY against a named evidence reference; a status without
+       evidence is TBC, and no candidate progresses to offer with a TBC
+       mandatory check.
+    4. Candidate personal data stays in the private instance repository —
+       never in the framework repo (data-separation rule).
+    5. Candidate-facing communications are sent by humans (or human-approved
+       automation outside this roster) from human-approved templates only.
+
+  expansion_path:
+    - "recruitment_onboarding_agent — post-offer onboarding coordination (first likely MINOR)"
+    - "recruitment_retention_insight_agent — attrition/retention analysis feeding the ECL HR domain"
+  retirement_condition: "Not activated by any engagement within 2 quarterly
+    cycles → proposed for archive at the AI Manager's quarterly review
+    (protocol Stage 5 default)."
+  estimated_cost_note: "Lean seed: ~8–15 agent-runs per hiring cycle
+    (1 orchestration pass, 2–4 attraction passes, 1 per candidate reaching
+    compliance/offer stage). Attraction copy costs land on roster-content."
+
+  # ---- decision (human only) ----
+  decision: "approved"
+  decision_by: "Russ Perry (owner)"
+  decision_date: "2026-07-07"
+  amendments_or_rejection_reason: "Approved as a live demonstration of the
+    Roster Genesis Protocol (owner directive, 2026-07-07: proceed with building
+    the recruitment seed roster as a demonstration). Seed built at lifecycle
+    'draft'; probation begins with the first real recruitment engagement per
+    protocol Stage 5."

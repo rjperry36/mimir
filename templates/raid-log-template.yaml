@@ -1,0 +1,30 @@
+# RAID Log — [business-id] / [engagement]
+# Living document — owned by delivery_project_manager_agent. Append-only ids.
+business_id: ""
+engagement: ""
+updated: ""
+risks:
+  - id: R1
+    description: ""
+    likelihood: ""      # low/med/high
+    impact: ""          # low/med/high
+    mitigation: ""
+    owner: ""
+    status: open
+assumptions:
+  - id: A1
+    description: ""
+    validated: false
+    validation_route: ""
+issues:
+  - id: I1
+    description: ""
+    severity: ""
+    owner: ""
+    status: open
+dependencies:
+  - id: D1
+    description: ""
+    depends_on: ""      # agent, human, or external party
+    needed_by: ""
+    timeout_ref: ""     # AOM S3.3 timeout class if human input

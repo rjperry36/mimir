@@ -1,0 +1,29 @@
+# QA sign-off — riverside-bookings (SAMPLE)
+artifact: qa-signoff
+version: v1.0.0
+owner: quality_qa_engineer_agent
+engagement: riverside-bookings
+decision_required: true
+summary: >
+  All P1/P2 test cases pass against test doubles. 3 P3 defects deferred with
+  owner note. Sign-off requested before the release wave.
+results:
+  test_cases_total: 148
+  passed: 145
+  failed: 0
+  deferred: 3
+  coverage_pct: 87
+open_defects:
+  - id: QA-014
+    severity: P3
+    title: "404 page missing tablet breakpoint polish"
+    status: deferred
+  - id: QA-021
+    severity: P3
+    title: "Confirmation email copy pending final owner wording"
+    status: deferred
+  - id: QA-026
+    severity: P3
+    title: "Analytics events unverified pending GAP-012 stack decision"
+    status: deferred
+requires_human_signoff: true

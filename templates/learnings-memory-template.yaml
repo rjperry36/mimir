@@ -1,0 +1,26 @@
+# Rolling Learnings Memory — [roster-id] / [business-id]
+# THE long-term memory of the framework (Context & Memory Protocol).
+# Curated: raw learning-log entries are distilled here monthly by the
+# roster orchestrator, cross-roster quarterly by ai_manager_agent.
+# Agents load THIS file at kickoff — never the raw logs.
+roster_id: ""
+business_id: ""            # or "all" for roster-general memory
+last_distilled: ""
+distilled_by: ""
+memory:
+  what_works:
+    - insight: ""
+      evidence_refs: []    # learning ids behind it
+      applies_to: []       # agent ids
+  what_fails:
+    - insight: ""
+      evidence_refs: []
+      applies_to: []
+  client_specifics:        # per-business quirks agents must know
+    - insight: ""
+      evidence_refs: []
+  actioned_into_definitions:  # learnings already baked into agent versions
+    - learning_ids: []
+      document: ""
+      version: ""
+retired: []                # distilled items no longer true (kept for audit)

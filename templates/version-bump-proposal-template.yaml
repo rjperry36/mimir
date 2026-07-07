@@ -1,0 +1,18 @@
+# Version Bump Proposal — AOM Section 4.2
+version_bump_proposal:
+  document_id: ""
+  current_version: ""
+  proposed_version: ""
+  bump_type: ""            # PATCH / MINOR / MAJOR
+  proposed_by: ""          # agent id or human
+  date: ""
+  reason: |
+    # why the change is needed — trace to LEARN output / audit / event
+  change_summary: |
+    # what specifically changes
+  affected_documents: []   # docs needing update as a result (incl. manifest)
+  cascade_required: ""     # yes / no / notify-only
+  human_sign_off_required: ""   # per AOM S4.1 authority matrix
+  decision: ""             # filled by approver (ai_manager_agent or human)
+  decision_by: ""
+  decision_date: ""

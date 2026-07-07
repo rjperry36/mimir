@@ -1,0 +1,8 @@
+# SAMPLE fixture — fictional data
+month,direct_bookings,agency_bookings,agency_commission_gbp
+2025-04,41,118,1062
+2025-05,55,161,1449
+2025-06,72,203,1827
+2025-07,90,244,2196
+2025-08,97,251,2259
+2025-09,61,170,1530
