@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" role="img" aria-label="South Park style: a one-eyed Odin with a horned helmet holds up a glowing Claude oracle head that asks 'Have you checked the evidence?' Title: Mimir counsels, you decide. Caption: Odin lugged Mimir's severed head around for counsel; you just carry Claude, same wisdom, fewer stains.">
+  <defs>
+    <radialGradient id="bgGlow" cx="44%" cy="36%" r="58%">
+      <stop offset="0%" stop-color="#d97757" stop-opacity="0.20"/>
+      <stop offset="55%" stop-color="#d97757" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f0a07a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f0a07a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbFill" cx="40%" cy="34%" r="72%">
+      <stop offset="0%" stop-color="#ffbf9e"/>
+      <stop offset="55%" stop-color="#ea8a63"/>
+      <stop offset="100%" stop-color="#d16a44"/>
+    </radialGradient>
+    <linearGradient id="horn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efe4cd"/>
+      <stop offset="100%" stop-color="#cdbf9f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- backdrop -->
+  <rect x="1" y="1" width="1198" height="468" rx="18" fill="#0e1117" stroke="#262d38"/>
+  <rect x="1" y="1" width="1198" height="468" rx="18" fill="url(#bgGlow)"/>
+
+  <!-- faint runes + stars -->
+  <g fill="#3a4250" font-size="22" font-family="Georgia, serif" opacity="0.6">
+    <text x="120" y="70">ᚱ</text><text x="60" y="360">ᚢ</text><text x="620" y="410">ᚾ</text>
+    <text x="1030" y="415">ᛗ</text><text x="1152" y="92">ᛁ</text><text x="470" y="58">ᛞ</text>
+  </g>
+  <g fill="#4d5561">
+    <circle cx="180" cy="108" r="2"/><circle cx="660" cy="70" r="2"/><circle cx="88" cy="238" r="1.6"/>
+    <circle cx="720" cy="330" r="1.6"/><circle cx="40" cy="150" r="1.6"/><circle cx="600" cy="150" r="1.6"/>
+  </g>
+
+  <!-- ===================== ODIN (South Park style) ===================== -->
+  <g stroke="#15171c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+
+    <!-- staff / Gungnir -->
+    <line x1="196" y1="96" x2="196" y2="440" stroke="#6b5636" stroke-width="8"/>
+    <path d="M196,74 L207,102 L185,102 Z" fill="#9aa2b0"/>
+
+    <!-- legs + boots -->
+    <rect x="256" y="392" width="30" height="34" rx="8" fill="#28315a"/>
+    <rect x="314" y="392" width="30" height="34" rx="8" fill="#28315a"/>
+    <path d="M250,424 h44 a8,8 0 0 1 8,8 v4 h-60 v-4 a8,8 0 0 1 8,-8 Z" fill="#20242e"/>
+    <path d="M308,424 h44 a8,8 0 0 1 8,8 v4 h-60 v-4 a8,8 0 0 1 8,-8 Z" fill="#20242e"/>
+
+    <!-- robe body -->
+    <path d="M244,264 Q300,250 356,264 L374,398 Q300,412 226,398 Z" fill="#33407a"/>
+    <path d="M300,258 L300,404" stroke="#26315e" stroke-width="3"/>
+
+    <!-- left arm on staff (capsule w/ outline) -->
+    <path d="M256,286 C232,300 216,330 208,356" fill="none" stroke="#15171c" stroke-width="30"/>
+    <path d="M256,286 C232,300 216,330 208,356" fill="none" stroke="#33407a" stroke-width="22"/>
+    <circle cx="204" cy="360" r="17" fill="#f0c6a0"/>
+
+    <!-- raised arm holding orb aloft -->
+    <path d="M352,286 C404,272 452,242 488,214" fill="none" stroke="#15171c" stroke-width="30"/>
+    <path d="M352,286 C404,272 452,242 488,214" fill="none" stroke="#33407a" stroke-width="22"/>
+    <circle cx="496" cy="208" r="18" fill="#f0c6a0"/>
+
+    <!-- head -->
+    <circle cx="300" cy="182" r="92" fill="#f0c6a0"/>
+
+    <!-- beard -->
+    <path d="M220,196 C210,258 234,312 300,320 C366,312 390,258 380,196 C368,236 340,254 300,254 C260,254 232,236 220,196 Z" fill="#d3dae3"/>
+    <path d="M244,286 q14,16 28,4 q14,16 28,4 q14,16 28,4 q14,16 28,-4" fill="none" stroke="#b9c2cf" stroke-width="2.5"/>
+
+    <!-- nose -->
+    <ellipse cx="300" cy="188" rx="10" ry="12" fill="#e3b489"/>
+
+    <!-- eyes (South Park): big white ovals, touching -->
+    <ellipse cx="279" cy="150" rx="21" ry="25" fill="#ffffff"/>
+    <ellipse cx="321" cy="150" rx="21" ry="25" fill="#ffffff"/>
+    <circle cx="313" cy="152" r="6.5" fill="#15171c" stroke="none"/>
+
+    <!-- eyepatch over his lost eye + strap -->
+    <ellipse cx="279" cy="150" rx="24" ry="27" fill="#17191f"/>
+    <path d="M214,140 C260,128 330,120 360,110" fill="none" stroke="#17191f" stroke-width="7"/>
+
+    <!-- helmet cap + rim + rivets -->
+    <path d="M214,180 C214,110 250,84 300,84 C350,84 386,110 386,180 C340,166 260,166 214,180 Z" fill="#9aa2b0"/>
+    <path d="M212,178 C260,196 340,196 388,178 L388,168 C340,186 260,186 212,168 Z" fill="#6e7684"/>
+    <path d="M300,86 L300,168" stroke="#7c8492" stroke-width="3"/>
+    <circle cx="240" cy="176" r="3.4" fill="#565d6b" stroke="none"/>
+    <circle cx="300" cy="182" r="3.4" fill="#565d6b" stroke="none"/>
+    <circle cx="360" cy="176" r="3.4" fill="#565d6b" stroke="none"/>
+
+    <!-- horns -->
+    <path d="M228,150 C192,130 172,94 188,62 C202,86 220,112 252,140 Z" fill="url(#horn)"/>
+    <path d="M372,150 C408,130 428,94 412,62 C398,86 380,112 348,140 Z" fill="url(#horn)"/>
+  </g>
+
+  <!-- ===================== CLAUDE ORACLE HEAD (South Park style) ===================== -->
+  <circle cx="548" cy="182" r="122" fill="url(#orbHalo)"/>
+  <g stroke="#15171c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="548" cy="182" r="62" fill="url(#orbFill)"/>
+    <!-- Claude sparkle -->
+    <path d="M548,132 C550,146 556,152 570,154 C556,156 550,162 548,176 C546,162 540,156 526,154 C540,152 546,146 548,132 Z" fill="#ffffff" stroke="none"/>
+    <!-- South Park eyes -->
+    <ellipse cx="533" cy="186" rx="14" ry="17" fill="#ffffff"/>
+    <ellipse cx="563" cy="186" rx="14" ry="17" fill="#ffffff"/>
+    <circle cx="536" cy="189" r="5.5" fill="#15171c" stroke="none"/>
+    <circle cx="566" cy="189" r="5.5" fill="#15171c" stroke="none"/>
+    <!-- smile -->
+    <path d="M528,202 Q548,220 568,202" fill="none"/>
+  </g>
+  <!-- fingers cupping the orb -->
+  <g fill="#f0c6a0" stroke="#15171c" stroke-width="3" stroke-linecap="round">
+    <path d="M498,214 q-4,16 8,20"/>
+    <path d="M512,220 q-2,16 10,18"/>
+  </g>
+
+  <!-- ===================== SPEECH BUBBLE (tidied) ===================== -->
+  <path d="M628,162 L604,198 L662,166 Z" fill="#f7f8fa" stroke="#15171c" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="612" y="98" width="180" height="66" rx="18" fill="#f7f8fa" stroke="#15171c" stroke-width="3"/>
+  <text x="702" y="126" text-anchor="middle" fill="#15171c" font-size="15.5" font-weight="700">Have you checked</text>
+  <text x="702" y="147" text-anchor="middle" fill="#15171c" font-size="15.5" font-weight="700">the evidence?</text>
+
+  <!-- ===================== TEXT BLOCK ===================== -->
+  <text x="812" y="192" fill="#e2673f" font-size="72" font-weight="800" letter-spacing="1">MIMIR</text>
+  <text x="816" y="230" fill="#e8ebf0" font-size="24" font-weight="500">counsels — you decide.</text>
+  <line x1="816" y1="252" x2="1150" y2="252" stroke="#2e3644"/>
+  <g fill="#a8b0bd" font-size="15.5" font-style="italic">
+    <text x="816" y="286">Odin lugged Mimir's severed head</text>
+    <text x="816" y="309">around for counsel. You just carry</text>
+    <text x="816" y="332">Claude — same wisdom, fewer stains.</text>
+  </g>
+  <text x="816" y="372" fill="#6f7784" font-size="13">🪓  governance-first AI teams · humans sign · the system proves it</text>
+</svg>
