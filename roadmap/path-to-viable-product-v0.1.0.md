@@ -32,10 +32,10 @@ before it.
 - Two scopes drafted: `ecl-interview-v2.2-scope` (v0.2.0, decisions
   incorporated, awaiting final sign-off) and
   `program-of-work-layer-scope` (v0.1.0, §8 questions open).
-- PraisonAI spike (2026-07-18): `PraisonAIExecutor` adapter built and
-  contract-proven behind the kernel's executor seam — see
-  `roadmap/praisonai-spike-memo-v1.0.0.md`. Verdict: adapt as an optional
-  execution backend; do not rebase the framework onto it.
+- PraisonAI spike (2026-07-18): adapter built, contract-proven, then
+  **dropped by owner decision** — mimir stays Claude-only. See
+  `roadmap/praisonai-spike-memo-v1.0.0.md` §0; the adapter survives in git
+  history if ever needed.
 
 ## 3. Phases
 
@@ -43,10 +43,10 @@ before it.
 
 The cheapest, highest-leverage credibility unlock.
 
-- One credentialed end-to-end run of one roster agent through the kernel —
-  via `ClaudeSubagentExecutor` (Anthropic) or `PraisonAIExecutor`
-  (multi-provider), whichever lands first. Both adapters exist; only a key
-  and a wired tool-set are missing.
+- One credentialed end-to-end run of one roster agent through the kernel
+  via `ClaudeSubagentExecutor` (requires the `anthropic` SDK and an
+  `ANTHROPIC_API_KEY`, BYOK). The adapter exists; only a key and a wired
+  tool-set are missing.
 - Record the run's ledgers as evidence; note it in the runtime README
   (replacing the "not proven in this sandbox" caveat with a dated proof).
 
@@ -61,8 +61,8 @@ Scope: `roadmap/ecl-interview-v2.2-scope-v0.2.0.md` (decision-complete).
   quality-gate enforcement, evidence locker, weighted scoring.
 - Chat frontend per owner decision D2: every module a chat session with
   continuous save; score visible with explainer (D1).
-- The PraisonAI spike memo's Phase-1 findings feed the build-vs-borrow
-  decision for session/memory/chat components.
+- Session/memory/chat components are built in-house (the PraisonAI
+  borrow option was closed by the owner's drop decision).
 
 **Exit criterion:** a full interview run end-to-end in the chat frontend on
 a fixture business, producing the five output documents + scores.
@@ -110,5 +110,5 @@ Phase 3 needs both.
 |------|------------|
 | Live-run proof keeps slipping (credentials/tooling friction) | Phase 0 is scoped to ONE wave of ONE agent — resist scope growth |
 | Harness build balloons | WS5 spec explicitly separates kernel-reuse from genuinely-new; chat frontend can ship module-by-module |
-| PraisonAI dependency churn (if adopted beyond the adapter) | Adapter isolates it behind the executor seam; core runtime stays stdlib+pyyaml (praisonaiagents imported lazily, live-run only) |
+| Single-provider dependency (Claude-only by owner decision) | The executor seam keeps the engine swappable; the PraisonAI evaluation is on file if a second provider is ever needed |
 | Stale audit claim (58/100) misrepresents current state in either direction | Re-audit at Phase 3; until then the honest-status line stays as-is |

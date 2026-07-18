@@ -1,10 +1,18 @@
 # Scope — Program of Work & Tactical Briefing Layer
 
-**Status:** DRAFT v0.1.0 — for owner review. Nothing in this document is
-approved or scheduled until signed off.
+**Status:** DRAFT v0.2.0 — owner decisions on the §8 open questions
+incorporated (2026-07-18). Awaiting final owner sign-off of the scope as a
+whole.
 **Author:** drafted for owner review following the objectives-to-work-packages
 gap analysis (session 2026-07-11).
 **Reviewers:** owner (sign-off), AI Manager (feasibility).
+
+## Version history
+
+| Version | Date | Change |
+|---------|------|--------|
+| v0.1.0 | 2026-07-11 | Initial draft with four open questions |
+| v0.2.0 | 2026-07-18 | Owner decisions incorporated: ECL Orchestrator is program custodian (Q1); autonomous guard-breach pause with immediate owner notification (Q2); work packages roster-level by default (Q3, defaulted); build sequenced after the interview harness (Q4) |
 **Relationship to other scopes:** independent of, and downstream from,
 `roadmap/ecl-interview-v2.2-scope-v0.1.0.md` (intake). This layer consumes a
 signed-off ECL regardless of which interview version produced it. The two
@@ -196,22 +204,14 @@ All land as drafts pending owner sign-off, per AOM version-bump authority.
 - [ ] A T0 engagement can run a one-initiative, two-package program without
       any additional ceremony.
 
-## 8. Open questions for the owner
+## 8. Owner decisions (recorded 2026-07-18)
 
-1. **Program custodian** — the draft assigns program ownership to the ECL
-   Orchestrator (strategy custodian). Alternative: a new dedicated
-   `program_manager_agent`. Extending the orchestrator is leaner; a separate
-   agent isolates a large new responsibility. Which?
-2. **Re-plan authority** — when a guard metric breaches, may the orchestrator
-   pause in-flight work packages autonomously (owner notified), or is pause
-   itself owner-signed? (Framework precedent: PATCH autonomous, MAJOR
-   signed — where does "pause a package" sit?)
-3. **Granularity floor** — is a work package always roster-level, or may it
-   target a single agent within a roster? (Draft says roster-level; the
-   roster orchestrator decides internal sequencing.)
-4. **Sequencing vs the interview scope** — build this layer first (it
-   unlocks value from every existing signed ECL), or after v2.2 intake?
-   The two are independent; my recommendation is this one first.
+| # | Question | Decision |
+|---|----------|----------|
+| Q1 | Program custodian | **ECL Orchestrator** takes the responsibility (extend, don't add a new agent). Deliverable D4 stands as drafted. |
+| Q2 | Re-plan authority on guard-metric breach | **Autonomous pause, owner notified immediately.** Pause is stop-only and reversible; resume/amend/cancel remain owner-signed. WS6 to encode this as: pause = autonomous with notification; every other disposition = owner decision. |
+| Q3 | Granularity floor | **Roster-level** (the draft's default, applied as no override was raised — flag at review if agent-level targeting is ever needed). The roster orchestrator owns internal sequencing. |
+| Q4 | Sequencing vs the interview scope | **Interview harness builds first**; this layer follows (owner decision in the build-order review, 2026-07-18). The two scopes remain independent documents. |
 
 ## 9. Explicitly not decided here
 

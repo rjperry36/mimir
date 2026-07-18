@@ -1,10 +1,23 @@
 # PraisonAI Spike — Decision Memo
 
 **Date:** 2026-07-18
-**Status:** spike COMPLETE — adapter built and contract-proven; decision
-recommended below, owner to ratify.
+**Status:** CLOSED — owner decision recorded (see §0). The adapter built for
+the spike has been REMOVED from the codebase; this memo stays on file as the
+record of the evaluation and the decision.
 **Question:** should mimir utilise PraisonAI
 (github.com/MervinPraison/PraisonAI), adapt against it, or ignore it?
+
+---
+
+## 0. Owner decision (2026-07-18)
+
+**DROP.** The owner weighed the value assessment (modest immediate value —
+provider choice, a second live-run route, borrow-candidates for the chat
+harness — against a third-party dependency to watch) and decided not to keep
+PraisonAI, staying with the Claude-only executor path. The spike's adapter
+and tests were removed in the same commit that records this decision. The
+technical findings below remain valid and reusable if the question is ever
+reopened; the removed adapter exists in git history.
 
 ---
 
